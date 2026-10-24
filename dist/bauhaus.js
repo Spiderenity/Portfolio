@@ -8,7 +8,7 @@
  document.querySelectorAll('.wordmark').forEach(a=>{const u=new URL(a.href);u.searchParams.set('concept','bauhaus');a.href=u.href;});
  const canvas=document.createElement('canvas');canvas.id='truchet-background';canvas.setAttribute('aria-hidden','true');document.body.prepend(canvas);
  const ctx=canvas.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
- let width=0,height=0,ratio=1,time=0,last=0,frame=0,pointer=null;
+ let width=0,height=0,ratio=1,time=0,last=0,frame=0,pointer=null,pointerTarget=null,pointerStrength=0;
  const mod=(n,m)=>((n%m)+m)%m;
  const ease=k=>{k=Math.max(0,Math.min(1,k));return k*k*(3-2*k);};
  function resize(){width=innerWidth;height=innerHeight;ratio=Math.min(devicePixelRatio||1,1.5);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);draw();}
@@ -25,17 +25,17 @@
    const progress=ease(((phase%8)-delay)/1.15);
    let angle=(initial+(forward?progress:1-progress))*Math.PI/2;
    const cx=x*size+offset,cy=y*size+offset;
-   if(pointer&&!reduce.matches){const d=Math.hypot(pointer.x-cx,pointer.y-cy);angle+=Math.max(0,1-d/(size*1.6))*.22*Math.sin(time*2);}
+   if(pointer&&!reduce.matches){const d=Math.hypot(pointer.x-cx,pointer.y-cy);angle+=Math.max(0,1-d/(size*1.6))*.22*Math.sin(time*2)*pointerStrength;}
    ctx.save();ctx.translate(cx,cy);ctx.rotate(angle);ctx.beginPath();
    ctx.arc(-size/2,-size/2,size/2,0,Math.PI/2);
    ctx.moveTo(size/2-size/2,size/2);ctx.arc(size/2,size/2,size/2,Math.PI,Math.PI*1.5);
    ctx.stroke();ctx.restore();
   }
  }
- function tick(now){frame=0;if(document.hidden||reduce.matches)return;time+=last?Math.min((now-last)/1000,.05):0;last=now;draw();frame=requestAnimationFrame(tick);}
+ function tick(now){frame=0;if(document.hidden||reduce.matches)return;const dt=last?Math.min((now-last)/1000,.05):0;time+=dt;last=now;const follow=1-Math.exp(-dt/.22);if(pointerTarget){if(!pointer)pointer={...pointerTarget};pointer.x+=(pointerTarget.x-pointer.x)*follow;pointer.y+=(pointerTarget.y-pointer.y)*follow;}pointerStrength+=((pointerTarget?1:0)-pointerStrength)*follow;draw();frame=requestAnimationFrame(tick);}
  function restart(){cancelAnimationFrame(frame);last=0;draw();if(!document.hidden&&!reduce.matches)frame=requestAnimationFrame(tick);}
  addEventListener('resize',resize);document.addEventListener('visibilitychange',restart);reduce.addEventListener('change',restart);
- addEventListener('pointermove',e=>{pointer={x:e.clientX,y:e.clientY};},{passive:true});document.addEventListener('pointerleave',()=>pointer=null);
+ addEventListener('pointermove',e=>{pointerTarget={x:e.clientX,y:e.clientY};},{passive:true});document.addEventListener('pointerleave',()=>pointerTarget=null);
  resize();restart();
  let transition=0,animations=[];
  window.transitionPortfolioTab=(tab,apply)=>{
