@@ -70,3 +70,9 @@
 .bauhaus .close:active,.bauhaus .close:focus-visible{background:var(--vermilion);color:var(--paper)}
 @media(hover:hover){.bauhaus .close:hover{background:var(--vermilion);color:var(--paper)}}
 .bauhaus .project-row{transition:padding .24s ease 0s!important}
+
+@keyframes viewer-backdrop-in{from{opacity:0}to{opacity:1}}
+@keyframes viewer-backdrop-out{from{opacity:1}to{opacity:0}}
+.bauhaus dialog[open]::backdrop{animation:viewer-backdrop-in .22s ease-out both}
+.bauhaus dialog[open].is-closing::backdrop{animation:viewer-backdrop-out .22s ease-in both}
+@media(prefers-reduced-motion:reduce) and (pointer:fine){.bauhaus dialog[open]::backdrop{animation:none}}

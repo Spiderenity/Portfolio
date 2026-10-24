@@ -71,7 +71,7 @@
  };
  const viewer=document.querySelector('#viewer');let closing=false,opening=null;
  const close=viewer.close.bind(viewer);
- viewer.close=(...args)=>{if(closing||!viewer.open)return;if(reduce.matches){close(...args);return;}closing=true;opening?.cancel();viewer.animate([{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(56px)'}],{duration:200,easing:'ease-in'}).finished.finally(()=>{close(...args);closing=false;});};
+ viewer.close=(...args)=>{if(closing||!viewer.open)return;if(reduce.matches){close(...args);return;}closing=true;const current=getComputedStyle(viewer),from={opacity:current.opacity,transform:current.transform};opening?.cancel();viewer.classList.add('is-closing');const exit=viewer.animate([from,{opacity:0,transform:'translateY(56px)'}],{duration:220,easing:'ease-in',fill:'forwards'});exit.finished.finally(()=>{close(...args);exit.cancel();viewer.classList.remove('is-closing');closing=false;});};
  viewer.addEventListener('cancel',e=>{e.preventDefault();viewer.close();});
  new MutationObserver(()=>{if(viewer.open&&!closing&&!reduce.matches)opening=viewer.animate([{opacity:0,transform:'translateY(70px)'},{opacity:1,transform:'translateY(0)'}],{duration:430,easing:'cubic-bezier(.16,1,.3,1)'});}).observe(viewer,{attributes:true,attributeFilter:['open']});
 })();
