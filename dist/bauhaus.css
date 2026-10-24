@@ -4,7 +4,7 @@
 .bauhaus .header{background:var(--paper);border-bottom:1px solid #41393622;box-shadow:0 3px 12px #41393608}
 .bauhaus .page-scroll{isolation:isolate;background:transparent}
 .bauhaus main,.bauhaus .footer{position:relative}
-.bauhaus .motion-grid{background:transparent;padding:24px;gap:16px}
+.bauhaus .motion-grid{background:transparent;padding:0;gap:0}
 .bauhaus #panel-illustration,.bauhaus .illustration-grid{background:transparent}
 .bauhaus .text-panel-header,.bauhaus .about-contact{background:var(--paper);width:fit-content;max-width:100%;padding-right:24px}
 .bauhaus .project-list{background:var(--paper);padding:0 24px}
@@ -19,7 +19,21 @@
 .bauhaus .close{border-bottom:2px solid var(--vermilion)}
 .bauhaus #viewer-description a{text-decoration-color:var(--vermilion)}
 .bauhaus .work-card{background:var(--ink)}
-@media(max-width:600px){.bauhaus .motion-grid{padding:14px;gap:14px}.bauhaus .project-list{padding:0 12px}.bauhaus .text-panel-header,.bauhaus .about-contact{padding-right:12px}#truchet-background{opacity:1}}
+@media(max-width:600px){.bauhaus .motion-grid{padding:0;gap:0}.bauhaus .project-list{padding:0 12px}.bauhaus .text-panel-header,.bauhaus .about-contact{padding-right:12px}#truchet-background{opacity:1}}
 
 .bauhaus .tabs button{font-family:PortfolioTitle,sans-serif;font-size:15px;letter-spacing:-.025em}
 @media(max-width:600px){.bauhaus .tabs{gap:18px}.bauhaus .tabs button{font-size:12px}}
+
+.bauhaus dialog{background:var(--ink);color:var(--paper)}
+.bauhaus .viewer-top .eyebrow,.bauhaus .close{color:var(--paper)}
+.bauhaus #viewer-media:has(img){background:var(--ink)}
+.bauhaus .text-panel-header,.bauhaus .about-contact{background:var(--ink);color:var(--paper);padding:24px;max-width:100%}
+.bauhaus .text-panel-header>.eyebrow,.bauhaus .about-contact>.eyebrow{color:var(--vermilion)}
+.bauhaus .about-contact .email-at{color:var(--vermilion)}
+.bauhaus .about-contact .contact-actions button{background:transparent;color:var(--paper);border-color:var(--paper);transition:background-color .2s,color .2s,border-color .2s}
+.bauhaus .about-contact .contact-actions button:hover,.bauhaus .about-contact .contact-actions button:focus-visible,.bauhaus .about-contact .contact-actions button:active{background:var(--vermilion);border-color:var(--vermilion);color:var(--paper)}
+.bauhaus .tabs button{line-height:24px}
+.bauhaus .tabs button::after{height:2px;transform:none!important;clip-path:inset(0 100% 0 0);transition:clip-path .2s ease!important}
+.bauhaus .tabs button[aria-selected=true]::after{clip-path:inset(0)}
+@media(hover:hover){.bauhaus .tabs button:hover::after{clip-path:inset(0)}}
+@media(max-width:600px){.bauhaus .text-panel-header,.bauhaus .about-contact{padding:20px}.bauhaus .about-contact>a{font-size:clamp(16px,4.5vw,22px)}}
