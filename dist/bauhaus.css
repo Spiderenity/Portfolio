@@ -61,3 +61,5 @@
 .bauhaus #viewer-media video{width:min(100%,calc(73dvh * var(--video-ratio,1.7777778)));height:auto;max-height:73dvh}
 .bauhaus #viewer-media video[data-work="critical"],.bauhaus #viewer-media video[data-work="until-i-know"]{background:var(--paper)}
 .bauhaus .work-card[data-work="critical"],.bauhaus .work-card[data-work="until-i-know"]{background:var(--paper)}
+
+.bauhaus .page-scroll{overflow-anchor:none}
