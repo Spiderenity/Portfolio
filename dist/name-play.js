@@ -9,6 +9,19 @@
   let width=0,height=0,size=52,walls=[],letters=[],grab=null,pointerId=null,frame=0,running=false,last=0,elapsed=0,nextLetter=0,dragTarget=null,hoverPoint=null,scrollDrag=null;
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
   function makeWalls(){Composite.remove(engine.world,walls);walls=[Bodies.rectangle(width/2,height+30,width+120,60,{isStatic:true}),Bodies.rectangle(-30,height/2,60,height+800,{isStatic:true}),Bodies.rectangle(width+30,height/2,60,height+800,{isStatic:true}),Bodies.rectangle(width/2,-330,width+120,60,{isStatic:true})];Composite.add(engine.world,walls);}
+  let emailWall=null,emailBounds=null;
+  function syncEmailWall(){
+    const email=document.querySelector('#contact-email');
+    if(!document.documentElement.classList.contains('bauhaus')||panel.hidden||!email)return;
+    const c=canvas.getBoundingClientRect(),r=email.getBoundingClientRect();
+    if(!r.width||!r.height)return;
+    const box={x:r.left-c.left,y:r.top-c.top,w:r.width,h:r.height};
+    if(emailBounds&&Object.keys(box).every(k=>Math.abs(box[k]-emailBounds[k])<.25))return;
+    if(emailWall)Composite.remove(engine.world,emailWall);
+    emailBounds=box;emailWall=Bodies.rectangle(box.x+box.w/2,box.y+box.h/2,box.w,box.h,{isStatic:true,friction:.7,restitution:.16,label:'Email box'});
+    Composite.add(engine.world,emailWall);
+    for(const b of letters)Matter.Sleeping.set(b,false);
+  }
   function addLetter(index,settled=false){
     const x=clamp(width-size*(.9+(index%3)*.65),size,width-size),y=settled?height-size*(.6+Math.floor(index/3)): -size*1.5;
     ctx.font=`700 ${size}px PortfolioTitle,sans-serif`;ctx.textAlign="left";ctx.textBaseline="alphabetic";const metric=ctx.measureText(characters[index]);const bw=Math.max(12,metric.actualBoundingBoxLeft+metric.actualBoundingBoxRight+4),bh=Math.max(12,metric.actualBoundingBoxAscent+metric.actualBoundingBoxDescent+4);
@@ -16,7 +29,7 @@
     body.letter=characters[index];letters.push(body);Composite.add(engine.world,body);
     if(!settled){Body.setVelocity(body,{x:[-.6,.4,-1,.3,-.5,.2][index%6],y:0});Body.setAngularVelocity(body,[.015,-.025,.02,-.01,.03,-.02][index%6]);}
   }
-  function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const old=width;width=w;height=h;const previousSize=size;size=width<450?40:52;if(letters.length&&size!==previousSize)for(const b of letters)Body.scale(b,size/previousSize,size/previousSize);const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);makeWalls();if(old&&old!==w)for(const b of letters)Body.setPosition(b,{x:clamp(b.position.x/old*w,size/2,w-size/2),y:Math.min(b.position.y,h-size/2)});draw();}
+  function resize(){const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const old=width;width=w;height=h;const previousSize=size;size=width<450?40:52;if(letters.length&&size!==previousSize)for(const b of letters)Body.scale(b,size/previousSize,size/previousSize);const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);makeWalls();syncEmailWall();if(old&&old!==w)for(const b of letters)Body.setPosition(b,{x:clamp(b.position.x/old*w,size/2,w-size/2),y:Math.min(b.position.y,h-size/2)});draw();}
   function draw(){if(!grab)canvas.classList.toggle("is-over-letter",!!hoverPoint&&Query.point(letters,hoverPoint).length>0);ctx.clearRect(0,0,width,height);const bauhaus=document.documentElement.classList.contains('bauhaus');ctx.fillStyle=bauhaus?'#413936':'#171717';ctx.textAlign='left';ctx.textBaseline='alphabetic';ctx.font=`700 ${size}px PortfolioTitle,sans-serif`;for(const b of letters){ctx.save();ctx.fillStyle=bauhaus?(b.letter==='@'?'#e75546':'#413936'):'#171717';ctx.translate(b.position.x,b.position.y);ctx.rotate(b.angle);const m=ctx.measureText(b.letter);ctx.fillText(b.letter,(m.actualBoundingBoxLeft-m.actualBoundingBoxRight)/2,(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2);ctx.restore();}ctx.strokeStyle=bauhaus?'#413936':'#17171730';ctx.lineWidth=bauhaus?3:1;ctx.beginPath();ctx.moveTo(0,height-1.5);ctx.lineTo(width,height-1.5);ctx.stroke();}
   function constrainBody(b){
     const dx=b.bounds.min.x<0?-b.bounds.min.x:b.bounds.max.x>width?width-b.bounds.max.x:0;
@@ -29,7 +42,7 @@
     const left=b.position.x-b.bounds.min.x,right=b.bounds.max.x-b.position.x,top=b.position.y-b.bounds.min.y,bottom=b.bounds.max.y-b.position.y;
     grab.pointA={x:clamp(dragTarget.x-offset.x,left+2,width-right-2)+offset.x,y:clamp(dragTarget.y-offset.y,top+2,height-bottom-2)+offset.y};
   }
-  function tick(time){if(!running)return;const dt=Math.min(time-last||16.67,33.33);last=time;elapsed+=dt;
+  function tick(time){if(!running)return;syncEmailWall();const dt=Math.min(time-last||16.67,33.33);last=time;elapsed+=dt;
     if(nextLetter<characters.length&&elapsed>=350+nextLetter*300){addLetter(nextLetter++);}
     for(let step=0;step<4;step++){updateGrab();Engine.update(engine,dt/4);for(const b of letters)constrainBody(b);}draw();frame=requestAnimationFrame(tick);
   }
