@@ -38,16 +38,29 @@
  addEventListener('pointermove',e=>{pointerTarget={x:e.clientX,y:e.clientY};},{passive:true});document.addEventListener('pointerleave',()=>pointerTarget=null);
  resize();restart();
  let transition=0,animations=[];
+ const main=document.querySelector('#works');
+ function clearMainSize(){main.style.height='';main.style.minHeight='';main.style.flex='';main.style.overflow='';}
  window.transitionPortfolioTab=(tab,apply)=>{
   const tabs=[...document.querySelectorAll('[role=tab]')],selected=tabs.find(t=>t.getAttribute('aria-selected')==='true');
   if(tab===selected)return;
-  const ticket=++transition;animations.forEach(a=>a.cancel());animations=[];
+  const startHeight=main.getBoundingClientRect().height;
+  const ticket=++transition;animations.forEach(a=>a.cancel());animations=[];clearMainSize();
   const direction=tabs.indexOf(tab)>tabs.indexOf(selected)?1:-1;
   const old=document.getElementById(selected.getAttribute('aria-controls'));
   const next=document.getElementById(tab.getAttribute('aria-controls'));
   if(reduce.matches){apply();return;}
   const leave=old.animate([{opacity:1,transform:'translateX(0)'},{opacity:0,transform:`translateX(${-direction*64}px)`}],{duration:180,easing:'ease-in',fill:'forwards'});animations.push(leave);
-  leave.finished.then(()=>{if(ticket!==transition)return;apply();leave.cancel();const enter=next.animate([{opacity:0,transform:`translateX(${direction*80}px)`},{opacity:1,transform:'translateX(0)'}],{duration:420,easing:'cubic-bezier(.2,.75,.2,1)'});animations=[enter];}).catch(()=>{});
+  leave.finished.then(()=>{
+   if(ticket!==transition)return;
+   apply();leave.cancel();
+   const endHeight=main.getBoundingClientRect().height;
+   main.style.flex='0 0 auto';main.style.minHeight='0';main.style.height=endHeight+'px';main.style.overflow='clip';
+   const timing={duration:420,easing:'cubic-bezier(.2,.75,.2,1)'};
+   const size=main.animate([{height:startHeight+'px'},{height:endHeight+'px'}],timing);
+   const enter=next.animate([{opacity:0,transform:`translateX(${direction*80}px)`},{opacity:1,transform:'translateX(0)'}],timing);
+   animations=[enter,size];
+   size.finished.then(()=>{if(ticket===transition){clearMainSize();animations=[];}}).catch(()=>{});
+  }).catch(()=>{});
  };
  const viewer=document.querySelector('#viewer');let closing=false,opening=null;
  const close=viewer.close.bind(viewer);
