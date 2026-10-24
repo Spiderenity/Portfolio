@@ -2,7 +2,7 @@
 .bauhaus body{background:var(--paper);color:var(--ink)}
 #truchet-background{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:1}
 .bauhaus .header{background:var(--paper);border-bottom:1px solid #41393622;box-shadow:0 3px 12px #41393608}
-.bauhaus .page-scroll{isolation:isolate;background:transparent}
+.bauhaus .page-scroll{isolation:isolate;background:transparent;z-index:2}
 .bauhaus main,.bauhaus .footer{position:relative}
 .bauhaus .motion-grid{background:transparent;padding:0;gap:0}
 .bauhaus #panel-illustration,.bauhaus .illustration-grid{background:transparent}
@@ -54,5 +54,5 @@
 .bauhaus #viewer-media video{height:auto}
 
 .bauhaus .text-panel-header>.eyebrow,.bauhaus .about-contact>.eyebrow{color:var(--vermilion)}
-.bauhaus body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(to bottom,#f5eedc 0%,#f5eedce6 16%,#f5eedc80 46%,#f5eedc00 80%)}
+.bauhaus body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,#f5eedc 0%,#f5eedce6 16%,#f5eedc80 46%,#f5eedc00 80%)}
 .bauhaus .contact-actions{margin-top:12px;min-height:24px}
