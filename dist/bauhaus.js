@@ -4,7 +4,7 @@
  if(new URLSearchParams(location.search).get('concept')!=='bauhaus')return;
  document.documentElement.classList.add('bauhaus');
  const style=document.createElement('link');style.rel='stylesheet';style.href='/bauhaus.css';document.head.append(style);
- document.querySelector('meta[name="theme-color"]').content='#f4efdf';
+ document.querySelector('meta[name="theme-color"]').content='#f5eedc';
  document.querySelectorAll('.wordmark').forEach(a=>{const u=new URL(a.href);u.searchParams.set('concept','bauhaus');a.href=u.href;});
  const canvas=document.createElement('canvas');canvas.id='truchet-background';canvas.setAttribute('aria-hidden','true');document.body.prepend(canvas);
  const ctx=canvas.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
@@ -15,7 +15,7 @@
  function draw(){
   ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,width,height);
   const size=width<600?112:160,drift=reduce.matches?0:time*10,offset=mod(drift,size),base=Math.floor(drift/size);
-  ctx.strokeStyle='#419aaa';ctx.lineWidth=size*.16;ctx.lineCap='round';
+  ctx.strokeStyle='#68aab4';ctx.lineWidth=size*.16;ctx.lineCap='round';
   for(let y=-2;y<height/size+2;y++)for(let x=-2;x<width/size+2;x++){
    const i=x-base,j=y-base,ix=mod(i,8),jy=mod(j,8);
    const seed=mod(ix*13+jy*7+ix*jy*3,17),initial=seed%2;
