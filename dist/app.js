@@ -57,15 +57,20 @@ function showContact(event){
   event.preventDefault();
   selectTab(document.querySelector('#tab-about'));
   document.querySelector('#contact').scrollIntoView({block:'center'});
-  document.querySelector('#copy-email').focus({preventScroll:true});
+  document.querySelector(new URLSearchParams(location.search).get('concept')==='bauhaus'?'#contact-email':'#copy-email').focus({preventScroll:true});
 }
 document.querySelectorAll('[data-contact]').forEach(link=>link.addEventListener('click',showContact));
 let copyStatusTimer;
-document.querySelector('#copy-email').addEventListener('click',async()=>{
+async function copyContactEmail(){
   const status=document.querySelector('#copy-status');
   try{await navigator.clipboard.writeText('shalespire@naver.com');clearTimeout(copyStatusTimer);status.textContent='복사 완료';status.classList.add('is-visible');copyStatusTimer=setTimeout(()=>status.classList.remove('is-visible'),1800);}
   catch{clearTimeout(copyStatusTimer);status.classList.add('is-visible');status.textContent='주소를 선택해서 복사해 주세요.';const range=document.createRange();range.selectNodeContents(document.querySelector('#contact-email'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);}
-});
+}
+document.querySelector('#copy-email').addEventListener('click',copyContactEmail);
+if(new URLSearchParams(location.search).get('concept')==='bauhaus'){
+ document.querySelector('#copy-email').hidden=true;
+ document.querySelector('#contact-email').addEventListener('click',copyContactEmail);
+}
 
 document.querySelector('#scroll-top').addEventListener('click',()=>{document.querySelector('#page-scroll').scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
 
