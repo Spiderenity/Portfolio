@@ -1,0 +1,10 @@
+qa/
+outputs/
+*.zip
+__pycache__/
+.openai/
+.env
+.env.*
+.wrangler/
+node_modules/
+*.tar.gz
