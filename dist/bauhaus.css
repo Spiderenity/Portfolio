@@ -63,3 +63,10 @@
 .bauhaus .work-card[data-work="critical"],.bauhaus .work-card[data-work="until-i-know"]{background:var(--paper)}
 
 .bauhaus .page-scroll{overflow-anchor:none}
+
+.bauhaus .close{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:0;border:0;background:transparent;color:var(--ink);transition:background-color .18s,color .18s;appearance:none}
+.bauhaus .close svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:square;pointer-events:none}
+.bauhaus .viewer-top{align-items:flex-start}
+.bauhaus .close:active,.bauhaus .close:focus-visible{background:var(--vermilion);color:var(--paper)}
+@media(hover:hover){.bauhaus .close:hover{background:var(--vermilion);color:var(--paper)}}
+.bauhaus .project-row{transition:padding .24s ease 0s!important}
