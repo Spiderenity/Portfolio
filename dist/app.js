@@ -48,7 +48,8 @@ for(let i=1;i<=6;i++){
   button.classList.add(stamp?'is-stamp':'is-sticker');button.style.setProperty('--tilt',[-6,5,-4,4,7,-5,-7,5][i-1]+'deg');window.attachPeel(button,img);
 }
 const tabs=[...document.querySelectorAll('[role=tab]')];
-function selectTab(tab){tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!selected;});}
+function applyTab(tab){tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!selected;});}
+function selectTab(tab){if(window.transitionPortfolioTab)window.transitionPortfolioTab(tab,()=>applyTab(tab));else applyTab(tab);}
 tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',e=>{let index;if(e.key==='ArrowRight')index=(i+1)%tabs.length;else if(e.key==='ArrowLeft')index=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')index=0;else if(e.key==='End')index=tabs.length-1;else return;e.preventDefault();selectTab(tabs[index]);tabs[index].focus();});});
 document.querySelector('#year').textContent=new Date().getFullYear();
 

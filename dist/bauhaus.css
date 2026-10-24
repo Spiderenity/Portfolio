@@ -1,0 +1,25 @@
+:root.bauhaus{--paper:#f4efdf;--ink:#292622;--teal:#419aaa;--vermilion:#e45137}
+.bauhaus body{background:var(--paper);color:var(--ink)}
+#truchet-background{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.5}
+.bauhaus .header{background:var(--paper);border-bottom:1px solid #29262222;box-shadow:0 3px 12px #29262208}
+.bauhaus .page-scroll{isolation:isolate;background:transparent}
+.bauhaus main,.bauhaus .footer{position:relative}
+.bauhaus .motion-grid{background:transparent;padding:24px;gap:16px}
+.bauhaus #panel-illustration,.bauhaus .illustration-grid{background:transparent}
+.bauhaus .text-panel-header,.bauhaus .about-contact{background:var(--paper);width:fit-content;max-width:100%;padding-right:24px}
+.bauhaus .project-list{background:var(--paper);padding:0 24px}
+.bauhaus .project-row{border-color:#29262255}
+.bauhaus .footer{background:var(--paper);border-top:1px solid #29262222}
+.bauhaus .tabs button::after{height:2px;background:var(--vermilion)}
+.bauhaus .study-badge{background:var(--paper);color:var(--ink);border-left:4px solid var(--vermilion)}
+.bauhaus .scroll-top,.bauhaus .scroll-top:hover,.bauhaus .scroll-top:active,.bauhaus .scroll-top:focus{background:var(--vermilion);color:var(--paper)}
+.bauhaus dialog{background:var(--paper);color:var(--ink);box-shadow:0 24px 100px #29262255}
+.bauhaus dialog::backdrop{background:#29262299;backdrop-filter:blur(5px)}
+.bauhaus .viewer-top .eyebrow,.bauhaus .close{color:var(--ink)}
+.bauhaus .close{border-bottom:2px solid var(--vermilion)}
+.bauhaus #viewer-description a{text-decoration-color:var(--vermilion)}
+.bauhaus .work-card{background:var(--ink)}
+@media(max-width:600px){.bauhaus .motion-grid{padding:14px;gap:14px}.bauhaus .project-list{padding:0 12px}.bauhaus .text-panel-header,.bauhaus .about-contact{padding-right:12px}#truchet-background{opacity:.38}}
+
+.bauhaus .tabs button{font-family:PortfolioTitle,sans-serif;font-size:15px;letter-spacing:-.025em}
+@media(max-width:600px){.bauhaus .tabs{gap:18px}.bauhaus .tabs button{font-size:12px}}
