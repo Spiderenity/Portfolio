@@ -37,3 +37,18 @@
 .bauhaus .tabs button[aria-selected=true]::after{clip-path:inset(0)}
 @media(hover:hover){.bauhaus .tabs button:hover::after{clip-path:inset(0)}}
 @media(max-width:600px){.bauhaus .text-panel-header{padding:0}.bauhaus .about-contact{padding:20px}.bauhaus .about-contact>a{font-size:clamp(16px,4.5vw,22px)}}
+
+@font-face{font-family:BauhausText;src:url('/fonts/Paperlogy-SemiBold.ttf') format('truetype');font-weight:600;font-display:block}
+@font-face{font-family:BauhausText;src:url('/fonts/Paperlogy-Bold.ttf') format('truetype');font-weight:700;font-display:block}
+:root.bauhaus{font-family:BauhausText,sans-serif;font-weight:600}
+.bauhaus button,.bauhaus input,.bauhaus select,.bauhaus textarea{font-family:BauhausText,sans-serif;font-weight:600}
+.bauhaus .wordmark,.bauhaus .tabs button,.bauhaus .text-panel-header h2,.bauhaus .project-row h3,.bauhaus .work-meta h2,.bauhaus .viewer-top h2{font-family:BauhausText,sans-serif;font-weight:700}
+.bauhaus .text-panel .text-panel-header>.text-panel-description,.bauhaus .work-type,.bauhaus .eyebrow{font-family:BauhausText,sans-serif;font-weight:600}
+.bauhaus .text-panel-header>.eyebrow{color:var(--ink)}
+.bauhaus .about-contact{background:transparent;color:var(--ink);padding:0}
+.bauhaus #contact-email{display:inline-block;background:var(--ink);color:var(--paper);padding:12px 16px;line-height:1.4;pointer-events:auto}
+.bauhaus .about-contact .contact-actions button{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.bauhaus .about-contact .contact-actions button:hover,.bauhaus .about-contact .contact-actions button:focus-visible{background:var(--vermilion);border-color:var(--vermilion);color:var(--paper)}
+.bauhaus .work-card:hover .work-image img{transform:none}
+.bauhaus .work-image img,.bauhaus .hover-preview{display:block;object-position:center}
+.bauhaus #viewer-media video{height:auto}
