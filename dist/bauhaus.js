@@ -7,7 +7,10 @@
  document.querySelector('meta[name="theme-color"]').content='#f5eedc';
  document.querySelectorAll('.wordmark').forEach(a=>{const u=new URL(a.href);u.searchParams.delete('concept');a.href=u.href;});
  const canvas=document.createElement('canvas');canvas.id='truchet-background';canvas.setAttribute('aria-hidden','true');document.body.prepend(canvas);
- const ctx=canvas.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
+ const ctx=canvas.getContext('2d');
+ const motionPreference=matchMedia('(prefers-reduced-motion: reduce)'),touchDevice=matchMedia('(pointer: coarse)');
+ // The requested mobile experience keeps background and navigation motion enabled.
+ const reduce={get matches(){return motionPreference.matches&&!touchDevice.matches;},addEventListener(type,listener){motionPreference.addEventListener(type,listener);touchDevice.addEventListener(type,listener);}};
  let width=0,height=0,ratio=1,time=0,last=0,frame=0,pointer=null,pointerTarget=null,pointerStrength=0;
  const mod=(n,m)=>((n%m)+m)%m;
  const ease=k=>{k=Math.max(0,Math.min(1,k));return k*k*(3-2*k);};
