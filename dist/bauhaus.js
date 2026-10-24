@@ -1,11 +1,11 @@
-// Experimental concept, enabled only with ?concept=bauhaus.
+// Default theme; the previous design remains available with ?theme=legacy.
 // Truchet quarter-turn waves inspired by the supplied “26 Truchet Flow” example.
 (()=>{
- if(new URLSearchParams(location.search).get('concept')!=='bauhaus')return;
+ if(new URLSearchParams(location.search).get('theme')==='legacy'){document.querySelectorAll('.wordmark').forEach(a=>{const u=new URL(a.href);u.searchParams.set('theme','legacy');a.href=u.href;});return;}
  document.documentElement.classList.add('bauhaus');
- const style=document.createElement('link');style.rel='stylesheet';style.href='/bauhaus.css';document.head.append(style);
+
  document.querySelector('meta[name="theme-color"]').content='#f5eedc';
- document.querySelectorAll('.wordmark').forEach(a=>{const u=new URL(a.href);u.searchParams.set('concept','bauhaus');a.href=u.href;});
+ document.querySelectorAll('.wordmark').forEach(a=>{const u=new URL(a.href);u.searchParams.delete('concept');a.href=u.href;});
  const canvas=document.createElement('canvas');canvas.id='truchet-background';canvas.setAttribute('aria-hidden','true');document.body.prepend(canvas);
  const ctx=canvas.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
  let width=0,height=0,ratio=1,time=0,last=0,frame=0,pointer=null,pointerTarget=null,pointerStrength=0;

@@ -18,7 +18,7 @@ function openWork(item,button){
   else description.textContent=item.description||'';
   media.replaceChildren();
   if(item.image){const img=new Image();img.src=item.image;img.alt=item.title;media.append(img);}
-  else{const video=document.createElement('video');const dimensions=item.slug==='until-i-know'?[960,960]:item.slug==='critical'?[1280,962]:[1280,720];video.width=dimensions[0];video.height=dimensions[1];video.style.aspectRatio=dimensions.join(' / ');video.style.setProperty('--video-ratio',dimensions[0]/dimensions[1]);video.dataset.work=item.slug;video.style.objectFit='contain';video.src=`/assets/${item.slug}.mp4`;video.poster=`/assets/${item.slug}.jpg`;video.controls=true;video.playsInline=true;video.preload='metadata';video.loop=!!item.loop;video.muted=!!item.loop;video.setAttribute('aria-label',item.title);media.append(video);}
+  else{const video=document.createElement('video');const dimensions=item.slug==='until-i-know'?[960,960]:item.slug==='critical'?[1276,962]:[1280,720];video.width=dimensions[0];video.height=dimensions[1];video.style.aspectRatio=dimensions.join(' / ');video.style.setProperty('--video-ratio',dimensions[0]/dimensions[1]);video.dataset.work=item.slug;video.style.objectFit='contain';video.src=`/assets/${item.slug}.mp4`;video.poster=`/assets/${item.slug}.jpg`;video.controls=true;video.playsInline=true;video.preload='metadata';video.loop=!!item.loop;video.muted=!!item.loop;video.setAttribute('aria-label',item.title);media.append(video);}
   document.body.classList.add('modal-open');viewer.showModal();document.querySelector('#close-viewer').focus();
 }
 function cleanViewer(){const video=media.querySelector('video');if(video){video.pause();video.removeAttribute('src');video.load();}media.replaceChildren();document.body.classList.remove('modal-open');opener?.focus();}
@@ -43,7 +43,7 @@ works.forEach((item,i)=>{
   const index=document.createElement('span');index.className='work-index';index.textContent=String(i+1).padStart(2,'0');button.append(frame,meta,index);button.addEventListener('click',()=>openWork(item,button));document.querySelector('#motion-grid').append(button);
 });
 for(let i=1;i<=6;i++){
-  const num=String(i).padStart(2,'0');const stamp=[4,6,8].includes(i);const item={title:`Illustration ${num}`,image:`/assets/${stamp?(new URLSearchParams(location.search).get('concept')==='bauhaus'?'stamp-white':'stamp'):'sticker'}-${num}.webp`};
+  const num=String(i).padStart(2,'0');const stamp=[4,6,8].includes(i);const item={title:`Illustration ${num}`,image:`/assets/${stamp?(new URLSearchParams(location.search).get('theme')!=='legacy'?'stamp-white':'stamp'):'sticker'}-${num}.webp`};
   const button=document.createElement('button');button.className='illustration-card';button.setAttribute('aria-label',`${item.title} 크게 보기`);const img=new Image();img.src=item.image;img.alt=item.title;img.loading='lazy';const label=document.createElement('span');label.textContent=`VIEW ${num} ↗`;button.append(img,label);button.addEventListener('click',()=>openWork(item,button));document.querySelector('#illustration-grid').append(button);
   button.classList.add(stamp?'is-stamp':'is-sticker');button.style.setProperty('--tilt',[-6,5,-4,4,7,-5,-7,5][i-1]+'deg');window.attachPeel(button,img);
 }
@@ -57,7 +57,7 @@ function showContact(event){
   event.preventDefault();
   selectTab(document.querySelector('#tab-about'));
   document.querySelector('#contact').scrollIntoView({block:'center'});
-  document.querySelector(new URLSearchParams(location.search).get('concept')==='bauhaus'?'#contact-email':'#copy-email').focus({preventScroll:true});
+  document.querySelector(new URLSearchParams(location.search).get('theme')!=='legacy'?'#contact-email':'#copy-email').focus({preventScroll:true});
 }
 document.querySelectorAll('[data-contact]').forEach(link=>link.addEventListener('click',showContact));
 let copyStatusTimer;
@@ -67,7 +67,7 @@ async function copyContactEmail(){
   catch{clearTimeout(copyStatusTimer);status.classList.add('is-visible');status.textContent='주소를 선택해서 복사해 주세요.';const range=document.createRange();range.selectNodeContents(document.querySelector('#contact-email'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);}
 }
 document.querySelector('#copy-email').addEventListener('click',copyContactEmail);
-if(new URLSearchParams(location.search).get('concept')==='bauhaus'){
+if(new URLSearchParams(location.search).get('theme')!=='legacy'){
  document.querySelector('#copy-email').hidden=true;
  document.querySelector('#contact-email').addEventListener('click',copyContactEmail);
 }
