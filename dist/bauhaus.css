@@ -56,3 +56,8 @@
 .bauhaus .text-panel-header>.eyebrow,.bauhaus .about-contact>.eyebrow{color:var(--vermilion)}
 .bauhaus body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,#f5eedc 0%,#f5eedce6 16%,#f5eedc80 46%,#f5eedc00 80%)}
 .bauhaus .contact-actions{margin-top:12px;min-height:24px}
+
+/* Fit the video box itself, rather than letterboxing a full-width element. */
+.bauhaus #viewer-media video{width:min(100%,calc(73dvh * var(--video-ratio,1.7777778)));height:auto;max-height:73dvh}
+.bauhaus #viewer-media video[data-work="critical"],.bauhaus #viewer-media video[data-work="until-i-know"]{background:var(--paper)}
+.bauhaus .work-card[data-work="critical"],.bauhaus .work-card[data-work="until-i-know"]{background:var(--paper)}
