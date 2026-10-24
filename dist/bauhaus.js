@@ -5,8 +5,6 @@
  document.documentElement.classList.add('bauhaus');
  const style=document.createElement('link');style.rel='stylesheet';style.href='/bauhaus.css';document.head.append(style);
  document.querySelector('meta[name="theme-color"]').content='#f5eedc';
- const email=document.querySelector('#contact-email');
- if(email){const parts=email.textContent.split('@');const at=document.createElement('span');at.className='email-at';at.textContent='@';email.replaceChildren(document.createTextNode(parts[0]),at,document.createTextNode(parts.slice(1).join('@')));}
  document.querySelectorAll('.wordmark').forEach(a=>{const u=new URL(a.href);u.searchParams.set('concept','bauhaus');a.href=u.href;});
  const canvas=document.createElement('canvas');canvas.id='truchet-background';canvas.setAttribute('aria-hidden','true');document.body.prepend(canvas);
  const ctx=canvas.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
