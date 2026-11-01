@@ -137,3 +137,5 @@
 @media(pointer:coarse){#illustration-grid{touch-action:pan-y pinch-zoom;overscroll-behavior:auto}.illustration-card{touch-action:none}}
 
 @media(pointer:coarse){#illustration-grid,.illustration-card{touch-action:pan-y pinch-zoom}}
+
+.work-image .video-poster{display:block;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
