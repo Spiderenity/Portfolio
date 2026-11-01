@@ -2,7 +2,7 @@ const works = [
   {title:'MORGENSHTERN',slug:'morgenshtern',software:'After Effects'},
   {title:'Until I Know',slug:'until-i-know',software:'After Effects · Clip Studio Paint'},
   {title:'Critical',slug:'critical',software:'After Effects',loop:true},
-  {title:'PARANOIA',slug:'paranoia',software:'After Effects',videoPoster:true},
+  {title:'PARANOIA',slug:'paranoia',software:'After Effects',fullPreview:true},
   {title:'DGU',slug:'dgu',software:'After Effects'},
   {title:'Backwards',slug:'backwards-study',software:'After Effects',description:'원작의 콘셉트와 연출을 참고한 모작입니다.',originalTitle:'Feels Like We Only Go Backwards',originalUrl:'https://youtu.be/wycjnCCgUes?si=v1485BdhEFPvMs22'}
 ];
@@ -18,7 +18,7 @@ function openWork(item,button){
   else description.textContent=item.description||'';
   media.replaceChildren();
   if(item.image){const img=new Image();img.src=item.image;img.alt=item.title;media.append(img);}
-  else{const video=document.createElement('video');const dimensions=item.slug==='until-i-know'?[960,960]:item.slug==='critical'?[1276,962]:[1280,720];video.width=dimensions[0];video.height=dimensions[1];video.style.aspectRatio=dimensions.join(' / ');video.style.setProperty('--video-ratio',dimensions[0]/dimensions[1]);video.dataset.work=item.slug;video.style.objectFit='contain';video.src=`/assets/${item.slug}.mp4`;if(!item.videoPoster)video.poster=`/assets/${item.slug}.jpg`;video.controls=true;video.playsInline=true;video.preload='metadata';video.loop=!!item.loop;video.muted=!!item.loop;video.setAttribute('aria-label',item.title);media.append(video);}
+  else{const video=document.createElement('video');const dimensions=item.slug==='paranoia'?[1080,1080]:item.slug==='until-i-know'?[960,960]:item.slug==='critical'?[1276,962]:[1280,720];video.width=dimensions[0];video.height=dimensions[1];video.style.aspectRatio=dimensions.join(' / ');video.style.setProperty('--video-ratio',dimensions[0]/dimensions[1]);video.dataset.work=item.slug;video.style.objectFit='contain';video.src=`/assets/${item.slug}.mp4`;if(!item.videoPoster)video.poster=`/assets/${item.slug}.jpg`;video.controls=true;video.playsInline=true;video.preload='metadata';video.loop=!!item.loop;video.muted=!!item.loop;video.setAttribute('aria-label',item.title);media.append(video);}
   document.body.classList.add('modal-open');viewer.showModal();document.querySelector('#close-viewer').focus();
 }
 function cleanViewer(){const video=media.querySelector('video');if(video){video.pause();video.removeAttribute('src');video.load();}media.replaceChildren();document.body.classList.remove('modal-open');opener?.focus();}
@@ -33,7 +33,7 @@ works.forEach((item,i)=>{
   const preview=document.createElement('video');preview.className='hover-preview';preview.muted=true;preview.loop=true;preview.playsInline=true;preview.preload='none';preview.setAttribute('aria-hidden','true');frame.append(preview);
   let hovering=false;
   const stop=()=>{hovering=false;preview.pause();preview.classList.remove('is-playing');};
-  const start=(force=false)=>{if(force!==true&&(!matchMedia('(hover: hover)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches))return;hovering=true;if(!preview.getAttribute('src'))preview.src=`/assets/${item.slug}${item.videoPoster?'':'-preview'}.mp4`;preview.play().then(()=>{if(hovering)preview.classList.add('is-playing');else stop();}).catch(stop);};
+  const start=(force=false)=>{if(force!==true&&(!matchMedia('(hover: hover)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches))return;hovering=true;if(!preview.getAttribute('src'))preview.src=`/assets/${item.slug}${item.fullPreview?'':'-preview'}.mp4`;preview.play().then(()=>{if(hovering)preview.classList.add('is-playing');else stop();}).catch(stop);};
   mobilePreviews.push({button,start:()=>start(true),stop});
   button.addEventListener('pointerenter',start);button.addEventListener('pointerleave',()=>{if(matchMedia('(hover: hover)').matches)stop();});button.addEventListener('focus',start);button.addEventListener('blur',()=>{if(matchMedia('(hover: hover)').matches)stop();});button.addEventListener('click',stop);
   new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)stop();}).observe(button);
