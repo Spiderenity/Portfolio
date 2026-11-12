@@ -1,27 +1,55 @@
+const cutins = [
+  {title:'도쿄멸망 1999',slug:'tokyo-1999',dimensions:[1280,960]},
+  {title:'찰나',slug:'chalna',dimensions:[764,1080]},
+  {title:'PARANOIA',slug:'paranoia',dimensions:[1080,1080]},
+  {title:'Lemon',slug:'critical',dimensions:[1276,962]},
+  {title:'DGU',slug:'dgu',dimensions:[1280,720]}
+].map(item=>({...item,software:'After Effects'}));
+const isHSY=/^\/HSY(?:\.html)?\/?$/i.test(location.pathname);
 const works = [
-  {title:'MORGENSHTERN',slug:'morgenshtern',software:'After Effects'},
+  {title:'Western',slug:'western',software:'After Effects',dimensions:[1280,960]},
   {title:'Until I Know',slug:'until-i-know',software:'After Effects · Clip Studio Paint'},
-  {title:'Critical',slug:'critical',software:'After Effects',loop:true},
-  {title:'PARANOIA',slug:'paranoia',software:'After Effects',fullPreview:true},
-  {title:'DGU',slug:'dgu',software:'After Effects'},
+  {title:isHSY?'VOID':'World Edge Sonata',slug:isHSY?'void':'world-edge-sonata',software:'After Effects',dimensions:[1280,720]},
+  {...cutins[0],title:'Cut-in Collection',collection:cutins},
+  {title:'MORGENSHTERN',slug:'morgenshtern',software:'After Effects'},
   {title:'Backwards',slug:'backwards-study',software:'After Effects',description:'원작의 콘셉트와 연출을 참고한 모작입니다.',originalTitle:'Feels Like We Only Go Backwards',originalUrl:'https://youtu.be/wycjnCCgUes?si=v1485BdhEFPvMs22'}
 ];
 const viewer=document.querySelector('#viewer');
 const media=document.querySelector('#viewer-media');
 let opener;
-function openWork(item,button){
+const collectionNav=document.createElement('nav');
+collectionNav.className='collection-nav';collectionNav.hidden=true;
+collectionNav.setAttribute('aria-label','컷인 작품 선택');media.before(collectionNav);
+function releaseVideo(){const video=media.querySelector('video');if(video){video.pause();video.removeAttribute('src');video.load();}}
+
+function openWork(item,button,collection=item.collection){
+  const alreadyOpen=viewer.open;
   opener=button;
+  collectionNav.replaceChildren();collectionNav.hidden=!collection;
+  viewer.classList.toggle('has-collection',!!collection);
+  if(collection){
+    if(item.collection)item=collection[0];
+    collection.forEach(entry=>{
+      const choice=document.createElement('button');choice.type='button';
+      choice.setAttribute('aria-pressed',String(entry.slug===item.slug));
+      const thumb=new Image();thumb.src=`/assets/${entry.slug}.jpg`;thumb.alt='';
+      const label=document.createElement('span');label.textContent=entry.title;
+      choice.append(thumb,label);
+      choice.addEventListener('click',()=>{openWork(entry,button,collection);collectionNav.querySelector('[aria-pressed="true"]').focus({preventScroll:true});});
+      collectionNav.append(choice);
+    });
+  }
   document.querySelector('#viewer-title').textContent=item.title;
   document.querySelector('#viewer-category').textContent=item.image?'ILLUSTRATION':item.software;
   const description=document.querySelector('#viewer-description');description.replaceChildren();
   if(item.originalUrl){const credit=document.createElement('a');credit.href=item.originalUrl;credit.target='_blank';credit.rel='noopener noreferrer';credit.textContent=item.description;description.append(credit);}
   else description.textContent=item.description||'';
-  media.replaceChildren();
+  releaseVideo();media.replaceChildren();
   if(item.image){const img=new Image();img.src=item.image;img.alt=item.title;media.append(img);}
-  else{const video=document.createElement('video');const dimensions=item.slug==='paranoia'?[1080,1080]:item.slug==='until-i-know'?[960,960]:item.slug==='critical'?[1276,962]:[1280,720];video.width=dimensions[0];video.height=dimensions[1];video.style.aspectRatio=dimensions.join(' / ');video.style.setProperty('--video-ratio',dimensions[0]/dimensions[1]);video.dataset.work=item.slug;video.style.objectFit='contain';video.src=`/assets/${item.slug}.mp4`;if(!item.videoPoster)video.poster=`/assets/${item.slug}.jpg`;video.controls=true;video.playsInline=true;video.preload='metadata';video.loop=!!item.loop;video.muted=!!item.loop;video.setAttribute('aria-label',item.title);media.append(video);}
-  document.body.classList.add('modal-open');viewer.showModal();document.querySelector('#close-viewer').focus();
+  else{const video=document.createElement('video');const dimensions=item.dimensions||(item.slug==='paranoia'?[1080,1080]:item.slug==='until-i-know'?[960,960]:item.slug==='critical'?[1276,962]:[1280,720]);video.width=dimensions[0];video.height=dimensions[1];video.style.aspectRatio=dimensions.join(' / ');video.style.setProperty('--video-ratio',dimensions[0]/dimensions[1]);video.dataset.work=item.slug;video.style.objectFit='contain';video.src=`/assets/${item.slug}.mp4`;if(!item.videoPoster)video.poster=`/assets/${item.slug}.jpg`;video.controls=true;video.playsInline=true;video.preload='metadata';video.loop=!!item.loop;video.muted=!!item.loop;video.setAttribute('aria-label',item.title);media.append(video);}
+  document.body.classList.add('modal-open');if(!alreadyOpen){viewer.showModal();document.querySelector('#close-viewer').focus();}
 }
-function cleanViewer(){const video=media.querySelector('video');if(video){video.pause();video.removeAttribute('src');video.load();}media.replaceChildren();document.body.classList.remove('modal-open');opener?.focus();}
+function cleanViewer(){releaseVideo();media.replaceChildren();collectionNav.replaceChildren();collectionNav.hidden=true;viewer.classList.remove('has-collection');document.body.classList.remove('modal-open');opener?.focus();}
 document.querySelector('#close-viewer').addEventListener('click',()=>viewer.close());
 viewer.addEventListener('close',cleanViewer);
 viewer.addEventListener('click',e=>{const r=viewer.getBoundingClientRect();if(e.target===viewer&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))viewer.close();});
