@@ -9,9 +9,9 @@ const isHSY=/^\/HSY(?:\.html)?\/?$/i.test(location.pathname);
 const works = [
   {title:'Western',slug:'western',software:'After Effects',dimensions:[1280,960]},
   {title:'Until I Know',slug:'until-i-know',software:'After Effects · Clip Studio Paint'},
-  {title:isHSY?'VOID':'World Edge Sonata',slug:isHSY?'void':'world-edge-sonata',software:'After Effects',dimensions:[1280,720]},
-  {...cutins[0],title:'Cut-in Collection',collection:cutins},
+  {title:isHSY?'VOID':'World Edge Sonata',slug:isHSY?'void':'world-edge-sonata',description:isHSY?'캐릭터 일러스트: 공주, 에뜨, 먕, 에규':'캐릭터 디자인 Mingmo (@Delta_Ming)',software:'After Effects',dimensions:[1280,720]},
   {title:'MORGENSHTERN',slug:'morgenshtern',software:'After Effects'},
+  {...cutins[0],title:'Cut-in Collection',collection:cutins},
   {title:'Backwards',slug:'backwards-study',software:'After Effects',description:'원작의 콘셉트와 연출을 참고한 모작입니다.',originalTitle:'Feels Like We Only Go Backwards',originalUrl:'https://youtu.be/wycjnCCgUes?si=v1485BdhEFPvMs22'}
 ];
 const viewer=document.querySelector('#viewer');
