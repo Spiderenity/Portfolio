@@ -16,7 +16,7 @@ const works = [
 ];
 const viewer=document.querySelector('#viewer');
 const media=document.querySelector('#viewer-media');
-let opener;
+let opener,activeCollection=null;
 const collectionNav=document.createElement('nav');
 collectionNav.className='collection-nav';collectionNav.hidden=true;
 collectionNav.setAttribute('aria-label','컷인 작품 선택');media.before(collectionNav);
@@ -25,19 +25,22 @@ function releaseVideo(){const video=media.querySelector('video');if(video){video
 function openWork(item,button,collection=item.collection){
   const alreadyOpen=viewer.open;
   opener=button;
-  collectionNav.replaceChildren();collectionNav.hidden=!collection;
+  const rebuildCollection=activeCollection!==collection;
+  if(rebuildCollection)collectionNav.replaceChildren();
+  activeCollection=collection;collectionNav.hidden=!collection;
   viewer.classList.toggle('has-collection',!!collection);
   if(collection){
     if(item.collection)item=collection[0];
-    collection.forEach(entry=>{
+    if(rebuildCollection)collection.forEach(entry=>{
       const choice=document.createElement('button');choice.type='button';
-      choice.setAttribute('aria-pressed',String(entry.slug===item.slug));
+      choice.dataset.slug=entry.slug;choice.setAttribute('aria-pressed',String(entry.slug===item.slug));
       const thumb=new Image();thumb.src=`/assets/${entry.slug}.jpg`;thumb.alt='';
       const label=document.createElement('span');label.textContent=entry.title;
       choice.append(thumb,label);
       choice.addEventListener('click',()=>{openWork(entry,button,collection);collectionNav.querySelector('[aria-pressed="true"]').focus({preventScroll:true});});
       collectionNav.append(choice);
     });
+    for(const choice of collectionNav.children)choice.setAttribute('aria-pressed',String(choice.dataset.slug===item.slug));
   }
   document.querySelector('#viewer-title').textContent=item.title;
   document.querySelector('#viewer-category').textContent=item.image?'ILLUSTRATION':item.software;
@@ -49,7 +52,7 @@ function openWork(item,button,collection=item.collection){
   else{const video=document.createElement('video');const dimensions=item.dimensions||(item.slug==='paranoia'?[1080,1080]:item.slug==='until-i-know'?[960,960]:item.slug==='critical'?[1276,962]:[1280,720]);video.width=dimensions[0];video.height=dimensions[1];video.style.aspectRatio=dimensions.join(' / ');video.style.setProperty('--video-ratio',dimensions[0]/dimensions[1]);video.dataset.work=item.slug;video.style.objectFit='contain';video.src=`/assets/${item.slug}.mp4`;if(!item.videoPoster)video.poster=`/assets/${item.slug}.jpg`;video.controls=true;video.playsInline=true;video.preload='metadata';video.loop=!!item.loop;video.muted=!!item.loop;video.setAttribute('aria-label',item.title);media.append(video);}
   document.body.classList.add('modal-open');if(!alreadyOpen){viewer.showModal();document.querySelector('#close-viewer').focus();}
 }
-function cleanViewer(){releaseVideo();media.replaceChildren();collectionNav.replaceChildren();collectionNav.hidden=true;viewer.classList.remove('has-collection');document.body.classList.remove('modal-open');opener?.focus();}
+function cleanViewer(){releaseVideo();media.replaceChildren();collectionNav.replaceChildren();activeCollection=null;collectionNav.hidden=true;viewer.classList.remove('has-collection');document.body.classList.remove('modal-open');opener?.focus();}
 document.querySelector('#close-viewer').addEventListener('click',()=>viewer.close());
 viewer.addEventListener('close',cleanViewer);
 viewer.addEventListener('click',e=>{const r=viewer.getBoundingClientRect();if(e.target===viewer&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))viewer.close();});

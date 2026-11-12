@@ -145,10 +145,11 @@
 .collection-nav[hidden]{display:none}
 .collection-nav button{flex:1 0 110px;max-width:180px;display:grid;gap:7px;position:relative;padding:7px 7px 11px;border:0;background:transparent;color:inherit;font:inherit;font-size:12px;text-align:left;cursor:pointer}
 .collection-nav img{display:block;width:100%;height:58px;object-fit:cover}
-.collection-nav button::after{content:"";position:absolute;left:7px;right:7px;bottom:3px;height:2px;background:var(--vermilion,#e75546);transform:scaleX(0);transform-origin:left;pointer-events:none}
-.collection-nav button[aria-pressed="true"]::after{transform:scaleX(1);animation:collection-underline-in .28s cubic-bezier(.22,.61,.36,1) both}
-@keyframes collection-underline-in{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@media(prefers-reduced-motion:reduce) and (pointer:fine){.collection-nav button[aria-pressed="true"]::after{animation:none}}
+.collection-nav button::after{content:"";position:absolute;left:7px;right:7px;bottom:3px;height:2px;background:var(--vermilion,#e75546);transform:scaleX(0);transform-origin:left;pointer-events:none;transition:transform .28s cubic-bezier(.22,.61,.36,1)}
+.collection-nav button[aria-pressed="true"]::after{transform:scaleX(1)}
+@media(prefers-reduced-motion:reduce) and (pointer:fine){.collection-nav button::after{transition:none}}
 .collection-nav button:focus-visible{outline:2px solid currentColor;outline-offset:1px}
 .has-collection #viewer-media video{max-height:58dvh}
 @media(max-width:600px){.collection-nav{gap:6px}.collection-nav button{flex-basis:96px}.collection-nav img{height:48px}}
+
+@media(prefers-reduced-motion:reduce) and (pointer:coarse){.collection-nav button::after{transition:transform .28s cubic-bezier(.22,.61,.36,1)!important}}
