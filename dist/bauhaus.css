@@ -33,8 +33,8 @@
 .bauhaus .about-contact .contact-actions button{background:transparent;color:var(--paper);border-color:var(--paper);transition:background-color .2s,color .2s,border-color .2s}
 .bauhaus .about-contact .contact-actions button:hover,.bauhaus .about-contact .contact-actions button:focus-visible,.bauhaus .about-contact .contact-actions button:active{background:var(--vermilion);border-color:var(--vermilion);color:var(--paper)}
 .bauhaus .tabs button{line-height:24px}
-.bauhaus .tabs button::after{height:2px;transform:none!important;clip-path:inset(0 100% 0 0);transition:clip-path .2s ease!important}
-.bauhaus .tabs button[aria-selected=true]::after{clip-path:inset(0)}
+.bauhaus .tabs button::after,.bauhaus .collection-nav button::after{height:2px;transform:none!important;clip-path:inset(0 100% 0 0);transition:clip-path .2s ease!important}
+.bauhaus .tabs button[aria-selected=true]::after,.bauhaus .collection-nav button[aria-pressed="true"]::after{clip-path:inset(0)}
 @media(hover:hover){.bauhaus .tabs button:hover::after{clip-path:inset(0)}}
 @media(max-width:600px){.bauhaus .text-panel-header{padding:0}.bauhaus .about-contact{padding:20px}.bauhaus .about-contact>a{font-size:clamp(16px,4.5vw,22px)}}
 
