@@ -18,7 +18,7 @@
 .bauhaus .viewer-top .eyebrow,.bauhaus .close{color:var(--ink)}
 .bauhaus .close{border-bottom:2px solid var(--vermilion)}
 .bauhaus #viewer-description a{text-decoration-color:var(--vermilion)}
-.bauhaus .work-card{background:var(--ink)}
+.bauhaus .work-card{background:var(--teal)}
 @media(max-width:600px){.bauhaus .motion-grid{padding:0;gap:0}.bauhaus .project-list{padding:0 12px}.bauhaus .text-panel-header,.bauhaus .about-contact{padding-right:12px}#truchet-background{opacity:1}}
 
 .bauhaus .tabs button{font-family:PortfolioTitle,sans-serif;font-size:15px;letter-spacing:-.025em}
@@ -60,7 +60,7 @@
 /* Fit the video box itself, rather than letterboxing a full-width element. */
 .bauhaus #viewer-media video{width:min(100%,calc(73dvh * var(--video-ratio,1.7777778)));height:auto;max-height:73dvh}
 .bauhaus #viewer-media video[data-work="critical"],.bauhaus #viewer-media video[data-work="until-i-know"]{background:var(--paper)}
-.bauhaus .work-card[data-work="critical"],.bauhaus .work-card[data-work="until-i-know"]{background:var(--paper)}
+.bauhaus .work-card[data-work="critical"],.bauhaus .work-card[data-work="until-i-know"]{background:var(--teal)}
 
 .bauhaus .page-scroll{overflow-anchor:none}
 
