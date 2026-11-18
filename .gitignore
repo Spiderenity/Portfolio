@@ -2,6 +2,7 @@ qa/
 outputs/
 *.zip
 __pycache__/
+tools/illustration/output/
 .openai/
 .env
 .env.*

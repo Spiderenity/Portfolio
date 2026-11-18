@@ -23,6 +23,8 @@
 
 ## 수정과 배포 파일
 
+- 일러스트 제작 코드와 원본 대응·재생성 방법: `tools/illustration/README.md`. 2026-11-18 Git 이력에서 과거 제작 원문을 복구하고 현재 6장용 실행 코드를 보존했다. 이 제작 입력은 정리 시 삭제하지 않는다.
+
 - `dist/app.js`: 작품 목록, 동적 영상·썸네일 경로, 뷰어·컬렉션·탭.
 - `dist/index.html`, `dani.html`, `HSY.html`: 페이지별 이름·소개·연락처·프로젝트 링크.
 - `dist/style.css`, `bauhaus.css`, `bauhaus.js`, `peel.js`, `name-play.js`: 현재 화면과 상호작용.

@@ -1,0 +1,115 @@
+{
+  "date": "2026-11-18",
+  "pillow": "13.0.0",
+  "note": "Separate review output; published assets untouched. Historical lossy WebP encoders and resizing versions can differ. Original code retained verbatim in history.",
+  "results": [
+    {
+      "file": "stamp-white-06.webp",
+      "size": [
+        1170,
+        1010
+      ],
+      "size_match": true,
+      "pixels_identical": false,
+      "alpha_identical": true,
+      "alpha_changed_pixels": 0,
+      "alpha_max_difference": 0,
+      "rgba_mean_absolute_difference": [
+        1.9728289752052128,
+        1.9663577896251163,
+        2.054055174748244,
+        0.0
+      ]
+    },
+    {
+      "file": "sticker-01.webp",
+      "size": [
+        1043,
+        1005
+      ],
+      "size_match": true,
+      "pixels_identical": false,
+      "alpha_identical": true,
+      "alpha_changed_pixels": 0,
+      "alpha_max_difference": 0,
+      "rgba_mean_absolute_difference": [
+        0.20322834532991801,
+        0.15436241610738255,
+        0.256986400690698,
+        0.0
+      ]
+    },
+    {
+      "file": "sticker-02.webp",
+      "size": [
+        1130,
+        1455
+      ],
+      "size_match": true,
+      "pixels_identical": false,
+      "alpha_identical": true,
+      "alpha_changed_pixels": 0,
+      "alpha_max_difference": 0,
+      "rgba_mean_absolute_difference": [
+        0.192380257275796,
+        0.1328084420521242,
+        0.15119666697077516,
+        0.0
+      ]
+    },
+    {
+      "file": "sticker-03.webp",
+      "size": [
+        678,
+        1500
+      ],
+      "size_match": true,
+      "pixels_identical": false,
+      "alpha_identical": false,
+      "alpha_changed_pixels": 5922,
+      "alpha_max_difference": 12,
+      "rgba_mean_absolute_difference": [
+        0.6122409046214355,
+        0.5766597836774828,
+        0.7197305801376598,
+        0.011393313667649951
+      ]
+    },
+    {
+      "file": "sticker-04.webp",
+      "size": [
+        1090,
+        938
+      ],
+      "size_match": true,
+      "pixels_identical": true,
+      "alpha_identical": true,
+      "alpha_changed_pixels": 0,
+      "alpha_max_difference": 0,
+      "rgba_mean_absolute_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "file": "sticker-05.webp",
+      "size": [
+        1018,
+        1096
+      ],
+      "size_match": true,
+      "pixels_identical": false,
+      "alpha_identical": true,
+      "alpha_changed_pixels": 0,
+      "alpha_max_difference": 0,
+      "rgba_mean_absolute_difference": [
+        0.31162702737584785,
+        0.24169331593363258,
+        0.324931345274117,
+        0.0
+      ]
+    }
+  ]
+}
