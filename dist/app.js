@@ -7,7 +7,7 @@ const cutins = [
 ].map(item=>({...item,software:'After Effects'}));
 const isHSY=/^\/HSY(?:\.html)?\/?$/i.test(location.pathname);
 const works = [
-  {title:'2026 REEL',slug:isHSY?'reel-hsy':'reel',software:'2D Animation · Motion Graphics',dimensions:[1280,720]},
+  {title:'2026 REEL',slug:isHSY?'reel-hsy':'reel',thumb:isHSY?'reel-hsy-thumb':'reel-thumb',software:'2D Animation · Motion Graphics',dimensions:[1280,720]},
   {title:'Until I Know',slug:'until-i-know',software:'After Effects · Clip Studio Paint'},
   {title:'VOID',slug:'void',description:'캐릭터 일러스트: 공주, 에뜨, 먕, 에규',software:'After Effects',dimensions:[1280,720]},
   {title:'MORGENSHTERN',slug:'morgenshtern',software:'After Effects'},
@@ -60,7 +60,7 @@ const mobilePreviews=[];
 works.forEach((item,i)=>{
   const button=document.createElement('button');button.className='work-card';button.dataset.work=item.slug;button.setAttribute('aria-label',`${item.title} 영상 보기`);
   const frame=document.createElement('div');frame.className='work-image';
-  const img=item.videoPoster?document.createElement('video'):new Image();if(item.videoPoster){img.className='video-poster';img.src=`/assets/${item.slug}.mp4#t=0.1`;img.muted=true;img.playsInline=true;img.preload='metadata';img.setAttribute('aria-hidden','true');}else{img.src=`/assets/${item.slug}.jpg`;img.alt=`${item.title} 영상 썸네일`;img.loading=i<2?'eager':'lazy';img.decoding='async';}frame.append(img);if(item.originalUrl){const badge=document.createElement('span');badge.className='study-badge';badge.textContent='MV 모작';button.append(badge);}
+  const img=item.videoPoster?document.createElement('video'):new Image();if(item.videoPoster){img.className='video-poster';img.src=`/assets/${item.slug}.mp4#t=0.1`;img.muted=true;img.playsInline=true;img.preload='metadata';img.setAttribute('aria-hidden','true');}else{img.src=`/assets/${item.thumb||item.slug}.jpg`;img.alt=`${item.title} 영상 썸네일`;img.loading=i<2?'eager':'lazy';img.decoding='async';}frame.append(img);if(item.originalUrl){const badge=document.createElement('span');badge.className='study-badge';badge.textContent='MV 모작';button.append(badge);}
   const preview=document.createElement('video');preview.className='hover-preview';preview.muted=true;preview.loop=true;preview.playsInline=true;preview.preload='none';preview.setAttribute('aria-hidden','true');frame.append(preview);
   let hovering=false;
   const stop=()=>{hovering=false;preview.pause();preview.classList.remove('is-playing');};

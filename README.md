@@ -10,8 +10,11 @@
 - Motion 카드 순서(2026-11-18 변경): 2026 REEL, Until I Know, VOID, MORGENSHTERN, Cut-in Collection, Western. 두 페이지 모두 3번째는 VOID.
   릴은 페이지마다 다른 판: 기본 페이지 `reel`(DaNi판, 원본 `../포트폴리오/REEL_1.mp4`), HSY `reel-hsy`(본명판, `../포트폴리오/REEL.mp4`).
   릴 웹용: 1280x720 H.264 CRF 23 + AAC 128k(각 약 12MB), 썸네일은 4.8초 타이틀 카드, 하이라이트는 24.75~32.75초(Beetlejuice) 640x360 무음.
+  릴 카드 썸네일은 사이트 전용 그림 `reel-thumb.jpg`(DaNi, 청록 배경) / `reel-hsy-thumb.jpg`(황서영, 잉크색 배경). 카드 비율 1.45로 그려 잘리지 않는다.
+  만드는 코드는 `../포트폴리오-릴/사이트-썸네일/make_reel_thumbs.py`. 작품 항목의 `thumb` 값이 있으면 카드만 그 그림을 쓰고, 영상 포스터는 `슬러그.jpg`(16:9 타이틀 카드)를 쓴다.
+  VOID 썸네일은 타이틀 카드(원본 25.5초)로 교체(2026-11-18).
   Backwards와 World Edge Sonata는 목록에서 뺐다(사용자: 일단 제외). `backwards-study*`, `world-edge-sonata*` 파일은 assets에 남겨 두었고 페이지에서 참조하지 않는다.
-  로컬 파일만 바꿨다. 커밋·푸시·배포는 하지 않았다. `node tools/check-new-works.cjs` 통과(새 순서 기준으로 갱신). 브라우저 화면 확인은 하지 않았다.
+  2026-11-18 사용자 요청으로 커밋 2a63fec을 main에 푸시해 배포했다(2026-11-14 정리분 포함). 배포 후 실제 주소에서 새 app.js와 릴 파일 응답을 확인했다. `node tools/check-new-works.cjs` 통과(새 순서 기준으로 갱신). 브라우저 화면 확인은 하지 않았다.
 - Motion 카드 6개와 컷인 컬렉션 5개. 컬렉션의 상세 영상과 썸네일은 각 작품별로 유지한다.
 - Illustration 6개: 스티커 4개, 흰 우표 2개.
 - 기본 테마만 남겼다. `?theme=legacy`로 열던 이전 테마 분기는 제거했다.
