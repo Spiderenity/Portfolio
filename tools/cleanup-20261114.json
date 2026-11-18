@@ -1,0 +1,814 @@
+{
+  "before_dist_hashes": {
+    "app.js": "1520d8a868d8f19ae63a05669929ead3aaeca015bbb60c5247aa306634c7a8c6",
+    "bauhaus.css": "cf3f34464c9b4d844feface798885a849267e2ff6bda2c0c02c178c254b22176",
+    "bauhaus.js": "66695ebc4f0ed6381a575caaad6533aba2af2ea372372c3a67cecb39315725c6",
+    "dani.html": "0d0aa18012fa417cf9d3525ff58c91d1fd4805e9bcc99623354c1de0440adaad",
+    "favicon-16.png": "e17d6a4814f2fe990d9901bb4574f150a8ead2d848fcc9195cc5c74649cd3941",
+    "favicon-32.png": "a34136ce6d367d7734ecbd52492c3b71e7f0ea800f8cb623085c341679df6068",
+    "favicon-48.png": "d8cf6bbe9735f6e4fbb82d7fadd333e5223b8d0f6b5365e05228c5bdec04f0fd",
+    "favicon.ico": "2c8bab2059cf97cf9f0a833ce9da59eec617ec83f29457c5b84e877843c20f61",
+    "HSY.html": "89a89ee4455b36220212605f6ee94ee112e4cf76249076a536803806886ca84a",
+    "index.html": "0d0aa18012fa417cf9d3525ff58c91d1fd4805e9bcc99623354c1de0440adaad",
+    "name-play.js": "9b3401e949a9f255183ac9988eac7ca87e14a5b79014cfb436efcc7324af9bc3",
+    "peel.js": "732c8135150ee501a30b39fde7d2124f17c3836988c66b8e69f8cccae9baecef",
+    "style.css": "95d3800de71ea38704c76341d0989467dc9e31fbfa1fc5e7d7954364f0ccd113",
+    "_routes.json": "3f8a6960aea75c9b4595eac2aeeea574df05c4d8e0d10fe2aca0f0322cafda02",
+    "_worker.js": "b18d89180a095e55390dac2a537c5f5a6ea28b8192d96abb01321226d87fcf39",
+    "assets/backwards-study-preview.mp4": "f2f8482fda5fd23aff46a3bfd9dd87a25e8dacd71bb2517a8e1cf615572553c8",
+    "assets/backwards-study.jpg": "fb93fe157c8d3ad8ff17ea835834a17f4736aef8d4322b132064a71aef873b89",
+    "assets/backwards-study.mp4": "43c7308a60a23a6293d09392eca84f56a6e25949f70c324b9d056cdaecd44183",
+    "assets/chalna-preview.mp4": "ff0cd8a8304d47e456d782cc6932758727ea7503981f93a8ee7cd38011234e59",
+    "assets/chalna.jpg": "ef12c6e5740b7827acaba71044d67e99c2ea62e47e335ca14421c1556e68c306",
+    "assets/chalna.mp4": "2f1b1e96f3c2fd1f149519eaade01bb7a5d54e6f72ea68964f1ebfe840997234",
+    "assets/character-acting-preview.mp4": "ce88363f9d37a452645dbf18a306a8a42de8a8ca421020453ad50118996bdf22",
+    "assets/character-acting.jpg": "ad196e83f406584f56b48bc58357fb2aed21e341a8663aea85fe33c3738647b4",
+    "assets/character-acting.mp4": "23f999e4886e53d6351722529b39e5b3cd7a70fa43f2278f3b1568d6b17b0379",
+    "assets/critical-preview.mp4": "78b713ea8f15faa7ee062e7d2d3cd19d757a0a5f05f36677a2b99487971462e1",
+    "assets/critical.jpg": "5f6451dbee9fdd7fdf178b3e42df6bd324d6b6a96bf8f9deafbff27cd1f9c997",
+    "assets/critical.mp4": "d5bd00e145d414d63bb15d75ba7cbafbeacaa01554e155ebfa1ef3bb593dcf14",
+    "assets/dgu-preview.mp4": "15bf692a69a22e578180812e601b3cc70c57e3aa3bf576e9e0ed62794491682d",
+    "assets/dgu.jpg": "1bcaa56eea0184f6b1c191f5c1682b3f1e34f85f48ddbda90c96385beffa6e8d",
+    "assets/dgu.mp4": "369bf3b903080e39796723cf4a3cfa77049f173cc2a13a4b246fb260ad7c6ae7",
+    "assets/illustration-01.webp": "4f5566a375b36a2e600f4605369a9891f060a8c711c6d172f07cfd14031677f1",
+    "assets/illustration-02.webp": "3f7978dd8999cede83f58f1c9165b437883dc8d6aec8f540c09a1a708aee287c",
+    "assets/illustration-03.webp": "f6e98688a6d07490e5ad70c4f44f6a04ae5ee0c3bd3f3cc11ef7ab6d7f96f26f",
+    "assets/illustration-04.webp": "4a4ca1fcdc43915bf64d611c3b2b8f1c3c37be8e7ca053dc6d1a326111348290",
+    "assets/illustration-05.webp": "0c19c1bacefbb411087074897e51b0a2ba7fe49226309ac729995adfee37935e",
+    "assets/illustration-06.webp": "166ecbb3b70558ff914468a115c8fdd390dd2d88c9e6a861ebcbd444c08bdc2a",
+    "assets/morgenshtern-preview.mp4": "c0750c6efb6b9cbeef8a63d9e67f47763c42c2a62549db1bfa701ca1ad9c1b5b",
+    "assets/morgenshtern.jpg": "58b7f0ba899e61d7422e3936558fbb2597e4fe4dffc7dd957e4c1191b4fc7721",
+    "assets/morgenshtern.mp4": "b237d7ddd369eb45e527140f9db584aefc55beb09dcdba5e62b0bd4c6a2f6950",
+    "assets/paranoia-preview.mp4": "5fc2755ff7e5968568396f872faca4bf4c8427af906b62a3a682442c8bb35f25",
+    "assets/paranoia.jpg": "8d75b18456c70fc6902972e5cfa10f94f5b16b217e1ae91cbcec59a5bdfdb0da",
+    "assets/paranoia.mp4": "6489f353797b808b875eaeb88fcbb1d6ffe08b5126df472f24ae577da2d335bb",
+    "assets/stamp-04.webp": "c608d882fe16d2fd9f0de9dfab4a505f354804ad160437c9d93ce51ab7277fcf",
+    "assets/stamp-06.webp": "9a49af30cd0785ad7a2b2ade2f46a4a2dda3af0f01c20b5f898475128190a9aa",
+    "assets/stamp-white-04.webp": "36ffeac760c2c5cd32d2749fea43e90bd324a5f8d4a38d272a5e52a770a32c59",
+    "assets/stamp-white-06.webp": "fadb09e4aeb6a2b841c8388c9a24a7bb36b8d37ba8d79278bb54d87dac77550c",
+    "assets/sticker-01.webp": "f60cd022e988f1e8b7547698bfa4cf0b2def6265102697b1b2e56c7d25950b3a",
+    "assets/sticker-02.webp": "a5f7595946ed3adcd074c37f33fe1e5844b505cd5af437e84a6f991f0dcb291f",
+    "assets/sticker-03.webp": "3121d97b12f545ca9721f9c1f5acce81aaef6870faf9c400fddd414c5f5422c1",
+    "assets/sticker-05.webp": "088c0e4664f5be5a8d18b51c6aceef0428259592a8562b174bfc766d62d118a9",
+    "assets/tokyo-1999-preview.mp4": "5383980674a9f8a59d78fac9e97464b1eaf5a56e60dfaf0a560ab193e2a68b46",
+    "assets/tokyo-1999.jpg": "5a6a680d6787b9f7f7d0a3cd50b84d96aba9d8125d5ce35ae85c160e85df1604",
+    "assets/tokyo-1999.mp4": "35d8ae740bd77fbbaed79bd2d4f94279fbd9a6ce6d2d0305560374e91f096227",
+    "assets/until-i-know-preview.mp4": "dbd284ad3825f60b7bcc8aba0b66a0d02f245cd9648196b79319f5cdc92acdb7",
+    "assets/until-i-know.jpg": "8476b0c1ac8fec9ef0110561bfa0a37a00f6980c70a098485624bff8e2cf6091",
+    "assets/until-i-know.mp4": "18cfcfd4781c2b6400899a9f4208185234041de563ee9d5d7cbb033a1a6b391b",
+    "assets/void-preview.mp4": "89d8cc7ec0ac129bd5a2de785bff79f30ce90708e277da0cdc20adb70dae083b",
+    "assets/void.jpg": "446240d3da78e400c13ffe38485ddb7b857035d2d3508c2ab49932237b6305b3",
+    "assets/void.mp4": "e2034c68990496fa83d794ef3331a849630511e16de553c69f5e37c2f23f6e9e",
+    "assets/western-preview.mp4": "806473c42b134aad1f6f8d81a98731c7a2492a09b195fab7154361b56fb797f7",
+    "assets/western.jpg": "a1bf74df65854f158eb7378f63cfcb4a0ce9992a0423d9f298196b279fb0ab65",
+    "assets/western.mp4": "38ae6d7162a898372fc334686c7f7666dfa4a85e71a03127a4b79fc6047400e5",
+    "assets/world-edge-sonata-preview.mp4": "a5a4d4c3b27354951d66cd50e0b539e669740e30d0d9c8b71453ae9ef496a638",
+    "assets/world-edge-sonata.jpg": "3c9d6fc1f9182e720cbb9fdf4a5e54eb06c8ce67cf16272dd0dcc36897ba32e2",
+    "assets/world-edge-sonata.mp4": "010db2f1b2c184be8945ca52683e4500a070a126974c89b5f2d9399937729c51",
+    "fonts/BarlowCondensed-OFL.txt": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+    "fonts/BarlowCondensed-SemiBold.ttf": "571bbdabf1bca470ee84d51b77fe02ed3b9efa26d75799ef3dd8dd87b38ba9e0",
+    "fonts/GmarketSans-Bold.license.txt": "2afc7db7e65fc186914d362e5c06367989fc40e99a930b36c24a4e85349e44de",
+    "fonts/GmarketSans-Bold.ttf": "ff7c354dd1a324e4cecc1223c4f71e74fa81be7027e0c7f6324c475909cacefc",
+    "fonts/Paperlogy-Bold.ttf": "7effb892621474e9c2a9112f482eb87dd25b65a470e5ae5971be5a68d89ad89b",
+    "fonts/Paperlogy-OFL.txt": "603b2e7ef9effb9037b0b67f0530cacdc05e71a4e569032d7e4d98c2e6763135",
+    "fonts/Paperlogy-Regular.license.txt": "70754b836b2d35f674946cb415f99135c191678dc85b9e04a23262d684e54b66",
+    "fonts/Paperlogy-Regular.ttf": "05e1021e3de620dddc97875342e2be1a94c5f8e9b9f792bd16c4c1d0085343b3",
+    "fonts/Paperlogy-SemiBold.ttf": "ca92034a1c4602a57c55434dfdbf8428a0bb88ac84a99a5effec1a41f0118127",
+    "vendor/matter-LICENSE.txt": "ed182087be5b26734aa6d4789743de3a97417950e8c1e3ff2e3d19c6462720d3",
+    "vendor/matter.min.js": "72d30be0f579eb02ce1e0b6f9d359a4f392e6837e5a26ba8be5dbee7f88e24ae"
+  },
+  "deleted": [
+    {
+      "path": "dist/assets/character-acting.mp4",
+      "bytes": 536017
+    },
+    {
+      "path": "dist/assets/character-acting.jpg",
+      "bytes": 31165
+    },
+    {
+      "path": "dist/assets/character-acting-preview.mp4",
+      "bytes": 111139
+    },
+    {
+      "path": "dist/assets/illustration-01.webp",
+      "bytes": 110624
+    },
+    {
+      "path": "dist/assets/illustration-02.webp",
+      "bytes": 177570
+    },
+    {
+      "path": "dist/assets/illustration-03.webp",
+      "bytes": 90876
+    },
+    {
+      "path": "dist/assets/illustration-04.webp",
+      "bytes": 270178
+    },
+    {
+      "path": "dist/assets/illustration-05.webp",
+      "bytes": 130098
+    },
+    {
+      "path": "dist/assets/illustration-06.webp",
+      "bytes": 159030
+    },
+    {
+      "path": "dist/assets/stamp-04.webp",
+      "bytes": 375228
+    },
+    {
+      "path": "dist/assets/stamp-06.webp",
+      "bytes": 235832
+    },
+    {
+      "path": "dist/assets/chalna-preview.mp4",
+      "bytes": 431612
+    },
+    {
+      "path": "dist/assets/critical-preview.mp4",
+      "bytes": 255128
+    },
+    {
+      "path": "dist/assets/dgu-preview.mp4",
+      "bytes": 146907
+    },
+    {
+      "path": "dist/assets/paranoia-preview.mp4",
+      "bytes": 312506
+    },
+    {
+      "path": "qa/bauhaus-pattern.png",
+      "bytes": 57391
+    },
+    {
+      "path": "qa/character-acting-0.jpg",
+      "bytes": 8295
+    },
+    {
+      "path": "qa/character-acting-1.jpg",
+      "bytes": 9928
+    },
+    {
+      "path": "qa/character-acting-2.jpg",
+      "bytes": 8711
+    },
+    {
+      "path": "qa/contact-sheet.jpg",
+      "bytes": 133703
+    },
+    {
+      "path": "qa/critical-0.jpg",
+      "bytes": 8717
+    },
+    {
+      "path": "qa/critical-1.jpg",
+      "bytes": 4612
+    },
+    {
+      "path": "qa/critical-2.jpg",
+      "bytes": 20556
+    },
+    {
+      "path": "qa/critical-video-frame.jpg",
+      "bytes": 58068
+    },
+    {
+      "path": "qa/dgu-0.jpg",
+      "bytes": 12216
+    },
+    {
+      "path": "qa/dgu-1.jpg",
+      "bytes": 13973
+    },
+    {
+      "path": "qa/dgu-2.jpg",
+      "bytes": 24640
+    },
+    {
+      "path": "qa/dgu-start-0.jpg",
+      "bytes": 4105
+    },
+    {
+      "path": "qa/dgu-start-1.jpg",
+      "bytes": 428
+    },
+    {
+      "path": "qa/dgu-start-2.jpg",
+      "bytes": 913
+    },
+    {
+      "path": "qa/dgu-start-3.jpg",
+      "bytes": 1277
+    },
+    {
+      "path": "qa/dgu-start-4.jpg",
+      "bytes": 2358
+    },
+    {
+      "path": "qa/dgu-start-5.jpg",
+      "bytes": 3594
+    },
+    {
+      "path": "qa/dgu-start-6.jpg",
+      "bytes": 5030
+    },
+    {
+      "path": "qa/dgu-start-7.jpg",
+      "bytes": 5078
+    },
+    {
+      "path": "qa/dgu-start.jpg",
+      "bytes": 23356
+    },
+    {
+      "path": "qa/donut-palette.png",
+      "bytes": 14242
+    },
+    {
+      "path": "qa/extracted-palette.png",
+      "bytes": 3634
+    },
+    {
+      "path": "qa/live-character-acting.jpg",
+      "bytes": 31165
+    },
+    {
+      "path": "qa/live-morg-group.jpg",
+      "bytes": 83134
+    },
+    {
+      "path": "qa/live-morg-uncropped.jpg",
+      "bytes": 57156
+    },
+    {
+      "path": "qa/live-morgenshtern.jpg",
+      "bytes": 49634
+    },
+    {
+      "path": "qa/morg-all.jpg",
+      "bytes": 100279
+    },
+    {
+      "path": "qa/morg-candidates.jpg",
+      "bytes": 68027
+    },
+    {
+      "path": "qa/morg-front.jpg",
+      "bytes": 46045
+    },
+    {
+      "path": "qa/morg-late-12.jpg",
+      "bytes": 6422
+    },
+    {
+      "path": "qa/morg-late-14.jpg",
+      "bytes": 6220
+    },
+    {
+      "path": "qa/morg-late-16.jpg",
+      "bytes": 4664
+    },
+    {
+      "path": "qa/morg-late-18.jpg",
+      "bytes": 4676
+    },
+    {
+      "path": "qa/morg-late-20.jpg",
+      "bytes": 5087
+    },
+    {
+      "path": "qa/morg-late-22.jpg",
+      "bytes": 5171
+    },
+    {
+      "path": "qa/morg-late-24.jpg",
+      "bytes": 3089
+    },
+    {
+      "path": "qa/morg-late-26.jpg",
+      "bytes": 6070
+    },
+    {
+      "path": "qa/morg-late-28.jpg",
+      "bytes": 4730
+    },
+    {
+      "path": "qa/morg-late-30.jpg",
+      "bytes": 4549
+    },
+    {
+      "path": "qa/morg-late-32.jpg",
+      "bytes": 1625
+    },
+    {
+      "path": "qa/morg-late-sheet.jpg",
+      "bytes": 54916
+    },
+    {
+      "path": "qa/morg-uncropped.jpg",
+      "bytes": 57156
+    },
+    {
+      "path": "qa/morg-walk-full.jpg",
+      "bytes": 58545
+    },
+    {
+      "path": "qa/morg-walk.jpg",
+      "bytes": 67916
+    },
+    {
+      "path": "qa/morgenshtern-0.jpg",
+      "bytes": 17251
+    },
+    {
+      "path": "qa/morgenshtern-1.jpg",
+      "bytes": 19087
+    },
+    {
+      "path": "qa/morgenshtern-2.jpg",
+      "bytes": 16637
+    },
+    {
+      "path": "qa/paranoia-candidates.jpg",
+      "bytes": 46962
+    },
+    {
+      "path": "qa/peel-review.png",
+      "bytes": 424656
+    },
+    {
+      "path": "qa/pick-backwards-study-0.jpg",
+      "bytes": 18185
+    },
+    {
+      "path": "qa/pick-backwards-study-1.jpg",
+      "bytes": 18371
+    },
+    {
+      "path": "qa/pick-backwards-study-2.jpg",
+      "bytes": 14159
+    },
+    {
+      "path": "qa/pick-backwards-study-3.jpg",
+      "bytes": 13085
+    },
+    {
+      "path": "qa/pick-character-acting-0.jpg",
+      "bytes": 8155
+    },
+    {
+      "path": "qa/pick-character-acting-1.jpg",
+      "bytes": 7490
+    },
+    {
+      "path": "qa/pick-character-acting-2.jpg",
+      "bytes": 8055
+    },
+    {
+      "path": "qa/pick-character-acting-3.jpg",
+      "bytes": 7443
+    },
+    {
+      "path": "qa/pick-critical-0.jpg",
+      "bytes": 7626
+    },
+    {
+      "path": "qa/pick-critical-1.jpg",
+      "bytes": 9688
+    },
+    {
+      "path": "qa/pick-critical-2.jpg",
+      "bytes": 18998
+    },
+    {
+      "path": "qa/pick-critical-3.jpg",
+      "bytes": 22432
+    },
+    {
+      "path": "qa/pick-dgu-0.jpg",
+      "bytes": 6643
+    },
+    {
+      "path": "qa/pick-dgu-1.jpg",
+      "bytes": 20768
+    },
+    {
+      "path": "qa/pick-dgu-2.jpg",
+      "bytes": 34982
+    },
+    {
+      "path": "qa/pick-dgu-3.jpg",
+      "bytes": 34874
+    },
+    {
+      "path": "qa/pick-morgenshtern-0.jpg",
+      "bytes": 14303
+    },
+    {
+      "path": "qa/pick-morgenshtern-1.jpg",
+      "bytes": 13731
+    },
+    {
+      "path": "qa/pick-morgenshtern-2.jpg",
+      "bytes": 14162
+    },
+    {
+      "path": "qa/pick-morgenshtern-3.jpg",
+      "bytes": 15574
+    },
+    {
+      "path": "qa/pick-until-i-know-0.jpg",
+      "bytes": 10030
+    },
+    {
+      "path": "qa/pick-until-i-know-1.jpg",
+      "bytes": 30885
+    },
+    {
+      "path": "qa/pick-until-i-know-2.jpg",
+      "bytes": 19269
+    },
+    {
+      "path": "qa/pick-until-i-know-3.jpg",
+      "bytes": 13880
+    },
+    {
+      "path": "qa/preview-character-acting-10.jpg",
+      "bytes": 2702
+    },
+    {
+      "path": "qa/preview-character-acting-11.jpg",
+      "bytes": 2780
+    },
+    {
+      "path": "qa/preview-character-acting-12.jpg",
+      "bytes": 2679
+    },
+    {
+      "path": "qa/preview-character-acting-13.jpg",
+      "bytes": 2715
+    },
+    {
+      "path": "qa/preview-character-acting-14.jpg",
+      "bytes": 2410
+    },
+    {
+      "path": "qa/preview-character-acting-15.jpg",
+      "bytes": 2414
+    },
+    {
+      "path": "qa/preview-character-acting-16.jpg",
+      "bytes": 2398
+    },
+    {
+      "path": "qa/preview-character-acting-17.jpg",
+      "bytes": 2395
+    },
+    {
+      "path": "qa/preview-character-acting-4.jpg",
+      "bytes": 3217
+    },
+    {
+      "path": "qa/preview-character-acting-5.jpg",
+      "bytes": 3169
+    },
+    {
+      "path": "qa/preview-character-acting-6.jpg",
+      "bytes": 2698
+    },
+    {
+      "path": "qa/preview-character-acting-7.jpg",
+      "bytes": 2917
+    },
+    {
+      "path": "qa/preview-character-acting-8.jpg",
+      "bytes": 2637
+    },
+    {
+      "path": "qa/preview-character-acting-9.jpg",
+      "bytes": 2448
+    },
+    {
+      "path": "qa/preview-character-acting-sheet.jpg",
+      "bytes": 41726
+    },
+    {
+      "path": "qa/preview-until-i-know-1.jpg",
+      "bytes": 2393
+    },
+    {
+      "path": "qa/preview-until-i-know-11.jpg",
+      "bytes": 3224
+    },
+    {
+      "path": "qa/preview-until-i-know-13.jpg",
+      "bytes": 6125
+    },
+    {
+      "path": "qa/preview-until-i-know-15.jpg",
+      "bytes": 5749
+    },
+    {
+      "path": "qa/preview-until-i-know-17.jpg",
+      "bytes": 5294
+    },
+    {
+      "path": "qa/preview-until-i-know-19.jpg",
+      "bytes": 4876
+    },
+    {
+      "path": "qa/preview-until-i-know-21.jpg",
+      "bytes": 7397
+    },
+    {
+      "path": "qa/preview-until-i-know-23.jpg",
+      "bytes": 7338
+    },
+    {
+      "path": "qa/preview-until-i-know-3.jpg",
+      "bytes": 3135
+    },
+    {
+      "path": "qa/preview-until-i-know-5.jpg",
+      "bytes": 2357
+    },
+    {
+      "path": "qa/preview-until-i-know-7.jpg",
+      "bytes": 5041
+    },
+    {
+      "path": "qa/preview-until-i-know-9.jpg",
+      "bytes": 3014
+    },
+    {
+      "path": "qa/preview-until-i-know-sheet.jpg",
+      "bytes": 40962
+    },
+    {
+      "path": "qa/repick-character-acting-0.jpg",
+      "bytes": 2637
+    },
+    {
+      "path": "qa/repick-character-acting-1.jpg",
+      "bytes": 2448
+    },
+    {
+      "path": "qa/repick-character-acting-2.jpg",
+      "bytes": 2702
+    },
+    {
+      "path": "qa/repick-character-acting-3.jpg",
+      "bytes": 2780
+    },
+    {
+      "path": "qa/repick-morgenshtern-0.jpg",
+      "bytes": 4664
+    },
+    {
+      "path": "qa/repick-morgenshtern-1.jpg",
+      "bytes": 4833
+    },
+    {
+      "path": "qa/repick-morgenshtern-2.jpg",
+      "bytes": 4676
+    },
+    {
+      "path": "qa/repick-morgenshtern-3.jpg",
+      "bytes": 4207
+    },
+    {
+      "path": "qa/repick-until-i-know-0.jpg",
+      "bytes": 5490
+    },
+    {
+      "path": "qa/repick-until-i-know-1.jpg",
+      "bytes": 5681
+    },
+    {
+      "path": "qa/repick-until-i-know-2.jpg",
+      "bytes": 5839
+    },
+    {
+      "path": "qa/repick-until-i-know-3.jpg",
+      "bytes": 5985
+    },
+    {
+      "path": "qa/repicks.jpg",
+      "bytes": 54300
+    },
+    {
+      "path": "qa/sticker-review.jpg",
+      "bytes": 77851
+    },
+    {
+      "path": "qa/thumb-picks.jpg",
+      "bytes": 162386
+    },
+    {
+      "path": "qa/thumbnail-options.jpg",
+      "bytes": 94255
+    },
+    {
+      "path": "qa/until-i-know-0.jpg",
+      "bytes": 30379
+    },
+    {
+      "path": "qa/until-i-know-1.jpg",
+      "bytes": 27606
+    },
+    {
+      "path": "qa/until-i-know-2.jpg",
+      "bytes": 29944
+    },
+    {
+      "path": "qa/new-works/chalna-15.jpg",
+      "bytes": 30439
+    },
+    {
+      "path": "qa/new-works/chalna-4.jpg",
+      "bytes": 29689
+    },
+    {
+      "path": "qa/new-works/chalna-9.jpg",
+      "bytes": 32876
+    },
+    {
+      "path": "qa/new-works/sonata-130.jpg",
+      "bytes": 18393
+    },
+    {
+      "path": "qa/new-works/sonata-155.jpg",
+      "bytes": 27186
+    },
+    {
+      "path": "qa/new-works/sonata-180.jpg",
+      "bytes": 28981
+    },
+    {
+      "path": "qa/new-works/tokyo-1999-1.jpg",
+      "bytes": 17293
+    },
+    {
+      "path": "qa/new-works/tokyo-1999-2.8.jpg",
+      "bytes": 15692
+    },
+    {
+      "path": "qa/new-works/tokyo-1999-4.5.jpg",
+      "bytes": 14943
+    },
+    {
+      "path": "qa/new-works/void-10.jpg",
+      "bytes": 12786
+    },
+    {
+      "path": "qa/new-works/void-20.jpg",
+      "bytes": 7979
+    },
+    {
+      "path": "qa/new-works/void-3.jpg",
+      "bytes": 12178
+    },
+    {
+      "path": "qa/new-works/void-30.jpg",
+      "bytes": 5994
+    },
+    {
+      "path": "qa/new-works/void-40.jpg",
+      "bytes": 17765
+    },
+    {
+      "path": "qa/new-works/void-50.jpg",
+      "bytes": 1516
+    },
+    {
+      "path": "qa/new-works/void-60.jpg",
+      "bytes": 10661
+    },
+    {
+      "path": "qa/new-works/void-70.jpg",
+      "bytes": 1244
+    },
+    {
+      "path": "qa/new-works/wes-10.jpg",
+      "bytes": 14652
+    },
+    {
+      "path": "qa/new-works/wes-35.jpg",
+      "bytes": 16371
+    },
+    {
+      "path": "qa/new-works/wes-65.jpg",
+      "bytes": 15410
+    },
+    {
+      "path": "qa/new-works/west-11.jpg",
+      "bytes": 29809
+    },
+    {
+      "path": "qa/new-works/west-3.jpg",
+      "bytes": 33471
+    },
+    {
+      "path": "qa/new-works/west-7.jpg",
+      "bytes": 25723
+    },
+    {
+      "path": "qa/new-works/western-15.jpg",
+      "bytes": 13359
+    },
+    {
+      "path": "qa/new-works/western-35.jpg",
+      "bytes": 12634
+    },
+    {
+      "path": "qa/new-works/western-60.jpg",
+      "bytes": 16298
+    },
+    {
+      "path": "qa/new-works/World Edge Sonata-blur-check.png",
+      "bytes": 169258
+    },
+    {
+      "path": "qa/new-works/바다 (3)-blur-check.png",
+      "bytes": 160365
+    },
+    {
+      "path": "qa/new-works/보이듀-blur-check.png",
+      "bytes": 85602
+    },
+    {
+      "path": "qa/v01/app.js",
+      "bytes": 4226
+    },
+    {
+      "path": "qa/v01/index.html",
+      "bytes": 4363
+    },
+    {
+      "path": "qa/v01/style.css",
+      "bytes": 7467
+    }
+  ],
+  "retained_after_review": [
+    "prepare_media.py",
+    "refine_assets.py",
+    "finish_visuals.py",
+    "qa/build-new-works.py",
+    "qa/character-acting-metadata.txt",
+    "qa/check-bauhaus.cjs",
+    "qa/check-new-works.cjs",
+    "qa/critical-before-crop.mp4",
+    "qa/critical-metadata.txt",
+    "qa/critical-preview.mp4",
+    "qa/critical.mp4",
+    "qa/dgu-metadata.txt",
+    "qa/export-preview-gifs.py",
+    "qa/history-reset-commit.txt",
+    "qa/live-burger.mp4",
+    "qa/live-character-acting-preview.mp4",
+    "qa/media.json",
+    "qa/morgenshtern-metadata.txt",
+    "qa/mostapes-work.css",
+    "qa/mostapes-work.html",
+    "qa/mostapes.css",
+    "qa/mostapes.html",
+    "qa/render-peel.cjs",
+    "qa/test-email-wall.cjs",
+    "qa/test-matter.cjs",
+    "qa/test-name-play.cjs",
+    "qa/test-range.mjs",
+    "qa/test-sticker-gesture.cjs",
+    "qa/until-i-know-metadata.txt",
+    "qa/new-works/selection.json",
+    "qa/python-tools/imageio_ffmpeg/_definitions.py",
+    "qa/python-tools/imageio_ffmpeg/_io.py",
+    "qa/python-tools/imageio_ffmpeg/_parsing.py",
+    "qa/python-tools/imageio_ffmpeg/_utils.py",
+    "qa/python-tools/imageio_ffmpeg/__init__.py",
+    "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/INSTALLER",
+    "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/METADATA",
+    "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/RECORD",
+    "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/REQUESTED",
+    "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/top_level.txt",
+    "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/WHEEL",
+    "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/licenses/LICENSE",
+    "qa/python-tools/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe",
+    "qa/python-tools/imageio_ffmpeg/binaries/README.md",
+    "qa/python-tools/imageio_ffmpeg/binaries/__init__.py",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/_definitions.cpython-312.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/_definitions.cpython-315.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/_io.cpython-312.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/_io.cpython-315.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/_parsing.cpython-312.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/_parsing.cpython-315.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/_utils.cpython-312.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/_utils.cpython-315.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/__init__.cpython-312.pyc",
+    "qa/python-tools/imageio_ffmpeg/__pycache__/__init__.cpython-315.pyc",
+    "qa/python-tools/imageio_ffmpeg/binaries/__pycache__/__init__.cpython-312.pyc",
+    "qa/python-tools/imageio_ffmpeg/binaries/__pycache__/__init__.cpython-315.pyc",
+    ".openai/hosting.json"
+  ]
+}

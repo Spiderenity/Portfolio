@@ -1,49 +1,59 @@
-# 황서영 포트폴리오
+# 포트폴리오 웹사이트
 
-2D 애니메이션·모션그래픽을 중심으로 한 정적 웹사이트. 원본은 `../포트폴리오/`에 보존하며 사이트는 `dist/`의 웹용 사본만 사용합니다.
+현재 운영 중인 사이트의 로컬 보관본. 2026-11-14 정리.
+원본 작품은 `../포트폴리오/`, 실제 페이지와 웹용 미디어는 `dist/`에 있다.
+이번 작업에서 원격 배포 상태와 로컬 커밋의 일치를 조회하지 않았으며 커밋·푸시·배포하지 않았다.
 
-## 구성
+## 현재 구성
 
-- Motion: 영상 4개, GIF에서 변환한 반복 영상 1개. 마우스 오버 시 무음 미리보기, 선택하면 전체 영상을 재생합니다.
-- Illustration: 이미지 6개. 이미지 비율을 유지하며 확대해서 볼 수 있습니다.
-- Other: 하루하나 공개 링크, LINK 디스코드 추가 링크, 미디펫의 미배포 표시.
-- 연락처: shalespire@naver.com
+- `/`, `/dani`: DaNi 페이지. `/HSY`: 황서영 페이지.
+- Motion 카드 순서(2026-11-18 변경): 2026 REEL, Until I Know, VOID, MORGENSHTERN, Cut-in Collection, Western. 두 페이지 모두 3번째는 VOID.
+  릴은 페이지마다 다른 판: 기본 페이지 `reel`(DaNi판, 원본 `../포트폴리오/REEL_1.mp4`), HSY `reel-hsy`(본명판, `../포트폴리오/REEL.mp4`).
+  릴 웹용: 1280x720 H.264 CRF 23 + AAC 128k(각 약 12MB), 썸네일은 4.8초 타이틀 카드, 하이라이트는 24.75~32.75초(Beetlejuice) 640x360 무음.
+  Backwards와 World Edge Sonata는 목록에서 뺐다(사용자: 일단 제외). `backwards-study*`, `world-edge-sonata*` 파일은 assets에 남겨 두었고 페이지에서 참조하지 않는다.
+  로컬 파일만 바꿨다. 커밋·푸시·배포는 하지 않았다. `node tools/check-new-works.cjs` 통과(새 순서 기준으로 갱신). 브라우저 화면 확인은 하지 않았다.
+- Motion 카드 6개와 컷인 컬렉션 5개. 컬렉션의 상세 영상과 썸네일은 각 작품별로 유지한다.
+- Illustration 6개: 스티커 4개, 흰 우표 2개.
+- 기본 테마만 남겼다. `?theme=legacy`로 열던 이전 테마 분기는 제거했다.
+- `style.css`는 현재 테마도 사용하는 공통 스타일이므로 삭제하지 않는다.
 
-## 수정 위치
+## 수정과 배포 파일
 
-- `dist/app.js`: 영상 제목, 순서, 파일명. 작품별 `description` 속성을 추가하면 확대 화면에 설명이 표시됩니다.
-- `dist/index.html`: 소개, 연락처, 코딩 작품, 탭별 작품 수.
-- `dist/style.css`: 색상, 레이아웃, 모바일 대응.
-- `dist/assets/`: 웹용 영상, 썸네일, 이미지.
-- `.openai/hosting.json`: 미사용 Sites 등록 기록. GitHub 업로드에서 제외합니다.
+- `dist/app.js`: 작품 목록, 동적 영상·썸네일 경로, 뷰어·컬렉션·탭.
+- `dist/index.html`, `dani.html`, `HSY.html`: 페이지별 이름·소개·연락처·프로젝트 링크.
+- `dist/style.css`, `bauhaus.css`, `bauhaus.js`, `peel.js`, `name-play.js`: 현재 화면과 상호작용.
+- `dist/assets`, `fonts`, `vendor`: 현재 미디어, 폰트, 라이브러리와 라이선스.
+- `dist/_worker.js`, `_routes.json`: Cloudflare 영상 Range 응답. 영상 탐색 기능에 필요하다.
+- `preview.mjs`: `node preview.mjs`로 로컬 정적 서버 실행. localhost:4173. 확장자 없는 페이지 경로는 Cloudflare와 처리 방식이 다를 수 있다.
+- Git 이력과 기존 로컬 라이선스 수정은 보존했다. 사용자 원격 저장소는 Spiderenity/Portfolio.
 
-작품의 담당 범위, 도구, 제작 연도는 확인되지 않아 표기하지 않았습니다. 일러스트레이션 제목은 임시 번호이며 실제 제목으로 교체할 수 있습니다. GIF 웹용 사본은 MP4로 변환되어 투명도를 유지하지 않습니다. 원본 GIF는 변경하지 않았습니다.
+기존 배포 설정 기록: Cloudflare Pages, main 브랜치, Framework None, Build command `exit 0`, Output `dist`, Root 저장소 루트.
+현재 원격 설정을 이번에 다시 확인한 것은 아니다. 배포 요청 없이 푸시하지 않는다.
 
-`node preview.mjs`로 로컬 미리보기를 시작할 수 있습니다. 주소는 `http://127.0.0.1:4173`입니다.
+## 정리 결과와 유지보수 자료
 
-## GitHub 및 Cloudflare Pages
+사용하지 않는 character-acting 영상·썸네일·하이라이트, 컷인 상세에서 사용하지 않는 하이라이트 4개,
+이전 일러스트 중간본 6개와 옛 우표 2개, qa/v01의 초기 사이트와 검토용 이미지들을 삭제했다.
+현재 카드가 사용하는 하이라이트 7개와 모든 현행 작품의 전체 영상·썸네일은 보존했다.
 
-사용자가 지정한 GitHub 계정은 Spiderenity입니다. 저장소 생성 및 업로드는 해당 계정의 쓰기 권한을 확인한 뒤 진행합니다. Cloudflare Pages에서 GitHub 저장소를 연결하고 다음 값을 설정합니다.
+현재 유지보수 도구는 `tools/`에 모았다. 사이트 루트에서 다음을 실행한다.
 
-- Framework preset: None
-- Production branch: main
-- Build command: exit 0
-- Build output directory: dist
-- Root directory: 저장소 루트
+- `node tools/check-new-works.cjs`: 페이지별 작품 목록·동적 미디어·컷인 전환·정리 동작·용량 제한.
+- `node tools/test-email-wall.cjs`: 현재 Matter.js 이메일 글자와 충돌 경계·드래그 스트레스 검사.
+- `node tools/test-sticker-gesture.cjs`: 모바일 스크롤과 길게 눌러 벗기기 동작 분리.
+- `node tools/test-range.mjs`: Worker 영상 범위 응답.
 
-공식 안내: https://developers.cloudflare.com/pages/framework-guides/deploy-anything/
+Node.js 기본 모듈과 현재 dist/vendor만 사용한다. 브라우저 자동 조작이나 이미지 출력을 하지 않는다.
+`preview.mjs`는 로컬 확인용으로 보존했다.
 
-작품 전체 원본, qa 디렉터리, 미사용 Sites 설정은 업로드 대상이 아닙니다. 배포 대상은 dist의 웹용 파일입니다. 현재 디자인은 MOSTAPES의 공개 구조를 참고한 수정 시안이며 최종 승인본이 아닙니다.
+초기 미디어 일괄 변환·구 테마 스티커 제작 스크립트, 오래된 Canvas 시연·중복 테스트,
+qa의 나머지 구 검토 영상·외부 참고 페이지·로컬 FFmpeg 패키지, 미사용 Sites 등록을 삭제했다.
+현재 미디어를 갱신할 때는 원본과 원하는 썸네일·하이라이트 구간을 먼저 확정하고 해당 파일만 제작한다.
+삭제한 초기 일괄 변환기를 재실행하거나 과거 선정값을 현재 정답으로 가정하지 않는다.
 
-화면/마우스/키보드 자동화 금지 지침에 따라 브라우저 자동 조작 테스트는 수행하지 않았습니다. 파일 참조, JavaScript 문법, 영상 디코딩을 명령행으로 확인합니다.
+`tools/media.json`과 `media-selection.json`은 원본 대응·당시 선정값 참고 자료다.
+`tools/cleanup-20261114.json`, `cleanup-tools-20261114.json`은 이번 정리의 해시·삭제 목록이다.
+이번 추가 정리에서 테스트 4개가 모두 통과했고 dist의 모든 파일 해시가 작업 전과 일치했다.
 
-## 현재 디자인
-
-- 표기: 황서영 / Hwang Seoyeong
-- 폰트: 보유 Gmarket Sans Bold와 Paperlogy Regular 파일. 라이선스는 dist/fonts에 포함.
-- 일러스트 1·2·3·5는 내부 구멍을 메운 스티커, 4·6은 우표 테두리. 7·8은 제외.
-- Canvas로 실제 알파 외곽을 접으며, 포인터가 벗어나면 원래 실루엣으로 복귀. 모션 감소 설정에서는 효과 생략.
-- 헤더 고정, 본문만 스크롤. 스크롤바 공간을 미리 확보.
-- 하루하나: AI 채팅 데스크톱 펫 / LINK: 디스코드 봇 게임 / 미디펫: MIDI 데스크톱 펫.
-
-GitHub: https://github.com/Spiderenity/Portfolio
+이번 검증: JavaScript 문법, 현재 동적 영상·썸네일 경로 29개, HTML/CSS 파일 참조와 Range 처리 검사 통과.
+현재 유지한 미디어는 변경 전 해시와 같다. 화면 자동화·렌더·영상 재인코딩·배포는 수행하지 않았다.

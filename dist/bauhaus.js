@@ -1,7 +1,6 @@
-// Default theme; the previous design remains available with ?theme=legacy.
+// Current portfolio theme.
 // Truchet quarter-turn waves inspired by the supplied “26 Truchet Flow” example.
 (()=>{
- if(new URLSearchParams(location.search).get('theme')==='legacy'){document.querySelectorAll('.wordmark').forEach(a=>{const u=new URL(a.href);u.searchParams.set('theme','legacy');a.href=u.href;});return;}
  document.documentElement.classList.add('bauhaus');
  const closeButton=document.querySelector('#close-viewer');
  closeButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';

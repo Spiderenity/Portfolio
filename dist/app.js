@@ -7,12 +7,12 @@ const cutins = [
 ].map(item=>({...item,software:'After Effects'}));
 const isHSY=/^\/HSY(?:\.html)?\/?$/i.test(location.pathname);
 const works = [
-  {title:'Western',slug:'western',software:'After Effects',dimensions:[1280,960]},
+  {title:'2026 REEL',slug:isHSY?'reel-hsy':'reel',software:'2D Animation · Motion Graphics',dimensions:[1280,720]},
   {title:'Until I Know',slug:'until-i-know',software:'After Effects · Clip Studio Paint'},
-  {title:isHSY?'VOID':'World Edge Sonata',slug:isHSY?'void':'world-edge-sonata',description:isHSY?'캐릭터 일러스트: 공주, 에뜨, 먕, 에규':'캐릭터 디자인 Mingmo (@Delta_Ming)',software:'After Effects',dimensions:[1280,720]},
+  {title:'VOID',slug:'void',description:'캐릭터 일러스트: 공주, 에뜨, 먕, 에규',software:'After Effects',dimensions:[1280,720]},
   {title:'MORGENSHTERN',slug:'morgenshtern',software:'After Effects'},
   {...cutins[0],title:'Cut-in Collection',collection:cutins},
-  {title:'Backwards',slug:'backwards-study',software:'After Effects',description:'원작의 콘셉트와 연출을 참고한 모작입니다.',originalTitle:'Feels Like We Only Go Backwards',originalUrl:'https://youtu.be/wycjnCCgUes?si=v1485BdhEFPvMs22'}
+  {title:'Western',slug:'western',software:'After Effects',dimensions:[1280,960]}
 ];
 const viewer=document.querySelector('#viewer');
 const media=document.querySelector('#viewer-media');
@@ -74,7 +74,7 @@ works.forEach((item,i)=>{
   const index=document.createElement('span');index.className='work-index';index.textContent=String(i+1).padStart(2,'0');button.append(frame,meta,index);button.addEventListener('click',()=>openWork(item,button));document.querySelector('#motion-grid').append(button);
 });
 for(let i=1;i<=6;i++){
-  const num=String(i).padStart(2,'0');const stamp=[4,6,8].includes(i);const item={title:`Illustration ${num}`,image:`/assets/${stamp?(new URLSearchParams(location.search).get('theme')!=='legacy'?'stamp-white':'stamp'):'sticker'}-${num}.webp`};
+  const num=String(i).padStart(2,'0');const stamp=[4,6,8].includes(i);const item={title:`Illustration ${num}`,image:`/assets/${stamp?'stamp-white':'sticker'}-${num}.webp`};
   const button=document.createElement('button');button.className='illustration-card';button.setAttribute('aria-label',`${item.title} 크게 보기`);const img=new Image();img.src=item.image;img.alt=item.title;img.loading='lazy';const label=document.createElement('span');label.textContent=`VIEW ${num} ↗`;button.append(img,label);button.addEventListener('click',()=>openWork(item,button));document.querySelector('#illustration-grid').append(button);
   button.classList.add(stamp?'is-stamp':'is-sticker');button.style.setProperty('--tilt',[-6,5,-4,4,7,-5,-7,5][i-1]+'deg');window.attachPeel(button,img);
 }
@@ -88,7 +88,7 @@ function showContact(event){
   event.preventDefault();
   selectTab(document.querySelector('#tab-about'));
   document.querySelector('#contact').scrollIntoView({block:'center'});
-  document.querySelector(new URLSearchParams(location.search).get('theme')!=='legacy'?'#contact-email':'#copy-email').focus({preventScroll:true});
+  document.querySelector('#contact-email').focus({preventScroll:true});
 }
 document.querySelectorAll('[data-contact]').forEach(link=>link.addEventListener('click',showContact));
 let copyStatusTimer;

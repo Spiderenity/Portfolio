@@ -1,0 +1,300 @@
+{
+  "deleted": [
+    {
+      "path": "qa/build-new-works.py",
+      "bytes": 1883
+    },
+    {
+      "path": "qa/character-acting-metadata.txt",
+      "bytes": 638
+    },
+    {
+      "path": "qa/check-bauhaus.cjs",
+      "bytes": 1166
+    },
+    {
+      "path": "qa/check-new-works.cjs",
+      "bytes": 2698
+    },
+    {
+      "path": "qa/critical-before-crop.mp4",
+      "bytes": 867261
+    },
+    {
+      "path": "qa/critical-metadata.txt",
+      "bytes": 271
+    },
+    {
+      "path": "qa/critical-preview.mp4",
+      "bytes": 255128
+    },
+    {
+      "path": "qa/critical.mp4",
+      "bytes": 1198870
+    },
+    {
+      "path": "qa/dgu-metadata.txt",
+      "bytes": 1011
+    },
+    {
+      "path": "qa/export-preview-gifs.py",
+      "bytes": 2309
+    },
+    {
+      "path": "qa/history-reset-commit.txt",
+      "bytes": 42
+    },
+    {
+      "path": "qa/live-burger.mp4",
+      "bytes": 536017
+    },
+    {
+      "path": "qa/live-character-acting-preview.mp4",
+      "bytes": 111139
+    },
+    {
+      "path": "qa/media.json",
+      "bytes": 1396
+    },
+    {
+      "path": "qa/morgenshtern-metadata.txt",
+      "bytes": 836
+    },
+    {
+      "path": "qa/mostapes-work.css",
+      "bytes": 41026
+    },
+    {
+      "path": "qa/mostapes-work.html",
+      "bytes": 105083
+    },
+    {
+      "path": "qa/mostapes.css",
+      "bytes": 74467
+    },
+    {
+      "path": "qa/mostapes.html",
+      "bytes": 31654
+    },
+    {
+      "path": "qa/render-peel.cjs",
+      "bytes": 1906
+    },
+    {
+      "path": "qa/test-email-wall.cjs",
+      "bytes": 2442
+    },
+    {
+      "path": "qa/test-matter.cjs",
+      "bytes": 2199
+    },
+    {
+      "path": "qa/test-name-play.cjs",
+      "bytes": 1213
+    },
+    {
+      "path": "qa/test-range.mjs",
+      "bytes": 869
+    },
+    {
+      "path": "qa/test-sticker-gesture.cjs",
+      "bytes": 1066
+    },
+    {
+      "path": "qa/until-i-know-metadata.txt",
+      "bytes": 1019
+    },
+    {
+      "path": "qa/new-works/selection.json",
+      "bytes": 509
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/_definitions.py",
+      "bytes": 2040
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/_io.py",
+      "bytes": 27290
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/_parsing.py",
+      "bytes": 6840
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/_utils.py",
+      "bytes": 3833
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__init__.py",
+      "bytes": 225
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/INSTALLER",
+      "bytes": 4
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/METADATA",
+      "bytes": 1530
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/RECORD",
+      "bytes": 1670
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/REQUESTED",
+      "bytes": 0
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/top_level.txt",
+      "bytes": 15
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/WHEEL",
+      "bytes": 96
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg-0.7.0.dist-info/licenses/LICENSE",
+      "bytes": 1317
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe",
+      "bytes": 87638016
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/binaries/README.md",
+      "bytes": 45
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/binaries/__init__.py",
+      "bytes": 45
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/_definitions.cpython-312.pyc",
+      "bytes": 2055
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/_definitions.cpython-315.pyc",
+      "bytes": 2186
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/_io.cpython-312.pyc",
+      "bytes": 27385
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/_io.cpython-315.pyc",
+      "bytes": 27882
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/_parsing.cpython-312.pyc",
+      "bytes": 9334
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/_parsing.cpython-315.pyc",
+      "bytes": 9891
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/_utils.cpython-312.pyc",
+      "bytes": 5400
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/_utils.cpython-315.pyc",
+      "bytes": 5688
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/__init__.cpython-312.pyc",
+      "bytes": 477
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/__pycache__/__init__.cpython-315.pyc",
+      "bytes": 471
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/binaries/__pycache__/__init__.cpython-312.pyc",
+      "bytes": 197
+    },
+    {
+      "path": "qa/python-tools/imageio_ffmpeg/binaries/__pycache__/__init__.cpython-315.pyc",
+      "bytes": 197
+    },
+    {
+      "path": ".openai/hosting.json",
+      "bytes": 106
+    },
+    {
+      "path": "prepare_media.py",
+      "bytes": 2400
+    },
+    {
+      "path": "refine_assets.py",
+      "bytes": 3223
+    },
+    {
+      "path": "finish_visuals.py",
+      "bytes": 2520
+    }
+  ],
+  "dist_hashes": {
+    "dist/app.js": "b7b8313c4ed2c9dd44109e168ad1d1b256695c6a1a8c76cb77f82645ebcaf0b2",
+    "dist/bauhaus.css": "cf3f34464c9b4d844feface798885a849267e2ff6bda2c0c02c178c254b22176",
+    "dist/bauhaus.js": "bf5ef2c57a353eeac624c5f1371b74ac27ddc6be22ab58c48ec6c3ed7d80ec28",
+    "dist/dani.html": "9c3baacb9fc2ceae932f05bf93f9eea3a8b3fba2e37cb435ad61216ff4fa3aca",
+    "dist/favicon-16.png": "e17d6a4814f2fe990d9901bb4574f150a8ead2d848fcc9195cc5c74649cd3941",
+    "dist/favicon-32.png": "a34136ce6d367d7734ecbd52492c3b71e7f0ea800f8cb623085c341679df6068",
+    "dist/favicon-48.png": "d8cf6bbe9735f6e4fbb82d7fadd333e5223b8d0f6b5365e05228c5bdec04f0fd",
+    "dist/favicon.ico": "2c8bab2059cf97cf9f0a833ce9da59eec617ec83f29457c5b84e877843c20f61",
+    "dist/HSY.html": "d2dcfee155854f704edab6c2c6cc6be6ebe8895be9250141e5b2af8a56bed240",
+    "dist/index.html": "9c3baacb9fc2ceae932f05bf93f9eea3a8b3fba2e37cb435ad61216ff4fa3aca",
+    "dist/name-play.js": "9b3401e949a9f255183ac9988eac7ca87e14a5b79014cfb436efcc7324af9bc3",
+    "dist/peel.js": "732c8135150ee501a30b39fde7d2124f17c3836988c66b8e69f8cccae9baecef",
+    "dist/style.css": "95d3800de71ea38704c76341d0989467dc9e31fbfa1fc5e7d7954364f0ccd113",
+    "dist/_routes.json": "3f8a6960aea75c9b4595eac2aeeea574df05c4d8e0d10fe2aca0f0322cafda02",
+    "dist/_worker.js": "b18d89180a095e55390dac2a537c5f5a6ea28b8192d96abb01321226d87fcf39",
+    "dist/assets/backwards-study-preview.mp4": "f2f8482fda5fd23aff46a3bfd9dd87a25e8dacd71bb2517a8e1cf615572553c8",
+    "dist/assets/backwards-study.jpg": "fb93fe157c8d3ad8ff17ea835834a17f4736aef8d4322b132064a71aef873b89",
+    "dist/assets/backwards-study.mp4": "43c7308a60a23a6293d09392eca84f56a6e25949f70c324b9d056cdaecd44183",
+    "dist/assets/chalna.jpg": "ef12c6e5740b7827acaba71044d67e99c2ea62e47e335ca14421c1556e68c306",
+    "dist/assets/chalna.mp4": "2f1b1e96f3c2fd1f149519eaade01bb7a5d54e6f72ea68964f1ebfe840997234",
+    "dist/assets/critical.jpg": "5f6451dbee9fdd7fdf178b3e42df6bd324d6b6a96bf8f9deafbff27cd1f9c997",
+    "dist/assets/critical.mp4": "d5bd00e145d414d63bb15d75ba7cbafbeacaa01554e155ebfa1ef3bb593dcf14",
+    "dist/assets/dgu.jpg": "1bcaa56eea0184f6b1c191f5c1682b3f1e34f85f48ddbda90c96385beffa6e8d",
+    "dist/assets/dgu.mp4": "369bf3b903080e39796723cf4a3cfa77049f173cc2a13a4b246fb260ad7c6ae7",
+    "dist/assets/morgenshtern-preview.mp4": "c0750c6efb6b9cbeef8a63d9e67f47763c42c2a62549db1bfa701ca1ad9c1b5b",
+    "dist/assets/morgenshtern.jpg": "58b7f0ba899e61d7422e3936558fbb2597e4fe4dffc7dd957e4c1191b4fc7721",
+    "dist/assets/morgenshtern.mp4": "b237d7ddd369eb45e527140f9db584aefc55beb09dcdba5e62b0bd4c6a2f6950",
+    "dist/assets/paranoia.jpg": "8d75b18456c70fc6902972e5cfa10f94f5b16b217e1ae91cbcec59a5bdfdb0da",
+    "dist/assets/paranoia.mp4": "6489f353797b808b875eaeb88fcbb1d6ffe08b5126df472f24ae577da2d335bb",
+    "dist/assets/stamp-white-04.webp": "36ffeac760c2c5cd32d2749fea43e90bd324a5f8d4a38d272a5e52a770a32c59",
+    "dist/assets/stamp-white-06.webp": "fadb09e4aeb6a2b841c8388c9a24a7bb36b8d37ba8d79278bb54d87dac77550c",
+    "dist/assets/sticker-01.webp": "f60cd022e988f1e8b7547698bfa4cf0b2def6265102697b1b2e56c7d25950b3a",
+    "dist/assets/sticker-02.webp": "a5f7595946ed3adcd074c37f33fe1e5844b505cd5af437e84a6f991f0dcb291f",
+    "dist/assets/sticker-03.webp": "3121d97b12f545ca9721f9c1f5acce81aaef6870faf9c400fddd414c5f5422c1",
+    "dist/assets/sticker-05.webp": "088c0e4664f5be5a8d18b51c6aceef0428259592a8562b174bfc766d62d118a9",
+    "dist/assets/tokyo-1999-preview.mp4": "5383980674a9f8a59d78fac9e97464b1eaf5a56e60dfaf0a560ab193e2a68b46",
+    "dist/assets/tokyo-1999.jpg": "5a6a680d6787b9f7f7d0a3cd50b84d96aba9d8125d5ce35ae85c160e85df1604",
+    "dist/assets/tokyo-1999.mp4": "35d8ae740bd77fbbaed79bd2d4f94279fbd9a6ce6d2d0305560374e91f096227",
+    "dist/assets/until-i-know-preview.mp4": "dbd284ad3825f60b7bcc8aba0b66a0d02f245cd9648196b79319f5cdc92acdb7",
+    "dist/assets/until-i-know.jpg": "8476b0c1ac8fec9ef0110561bfa0a37a00f6980c70a098485624bff8e2cf6091",
+    "dist/assets/until-i-know.mp4": "18cfcfd4781c2b6400899a9f4208185234041de563ee9d5d7cbb033a1a6b391b",
+    "dist/assets/void-preview.mp4": "89d8cc7ec0ac129bd5a2de785bff79f30ce90708e277da0cdc20adb70dae083b",
+    "dist/assets/void.jpg": "446240d3da78e400c13ffe38485ddb7b857035d2d3508c2ab49932237b6305b3",
+    "dist/assets/void.mp4": "e2034c68990496fa83d794ef3331a849630511e16de553c69f5e37c2f23f6e9e",
+    "dist/assets/western-preview.mp4": "806473c42b134aad1f6f8d81a98731c7a2492a09b195fab7154361b56fb797f7",
+    "dist/assets/western.jpg": "a1bf74df65854f158eb7378f63cfcb4a0ce9992a0423d9f298196b279fb0ab65",
+    "dist/assets/western.mp4": "38ae6d7162a898372fc334686c7f7666dfa4a85e71a03127a4b79fc6047400e5",
+    "dist/assets/world-edge-sonata-preview.mp4": "a5a4d4c3b27354951d66cd50e0b539e669740e30d0d9c8b71453ae9ef496a638",
+    "dist/assets/world-edge-sonata.jpg": "3c9d6fc1f9182e720cbb9fdf4a5e54eb06c8ce67cf16272dd0dcc36897ba32e2",
+    "dist/assets/world-edge-sonata.mp4": "010db2f1b2c184be8945ca52683e4500a070a126974c89b5f2d9399937729c51",
+    "dist/fonts/BarlowCondensed-OFL.txt": "186d750eb496a4c17a76385f82be6aea2ac1cf2de074a811d63786cf374ea73f",
+    "dist/fonts/BarlowCondensed-SemiBold.ttf": "571bbdabf1bca470ee84d51b77fe02ed3b9efa26d75799ef3dd8dd87b38ba9e0",
+    "dist/fonts/GmarketSans-Bold.license.txt": "2afc7db7e65fc186914d362e5c06367989fc40e99a930b36c24a4e85349e44de",
+    "dist/fonts/GmarketSans-Bold.ttf": "ff7c354dd1a324e4cecc1223c4f71e74fa81be7027e0c7f6324c475909cacefc",
+    "dist/fonts/Paperlogy-Bold.ttf": "7effb892621474e9c2a9112f482eb87dd25b65a470e5ae5971be5a68d89ad89b",
+    "dist/fonts/Paperlogy-OFL.txt": "603b2e7ef9effb9037b0b67f0530cacdc05e71a4e569032d7e4d98c2e6763135",
+    "dist/fonts/Paperlogy-Regular.license.txt": "70754b836b2d35f674946cb415f99135c191678dc85b9e04a23262d684e54b66",
+    "dist/fonts/Paperlogy-Regular.ttf": "05e1021e3de620dddc97875342e2be1a94c5f8e9b9f792bd16c4c1d0085343b3",
+    "dist/fonts/Paperlogy-SemiBold.ttf": "ca92034a1c4602a57c55434dfdbf8428a0bb88ac84a99a5effec1a41f0118127",
+    "dist/vendor/matter-LICENSE.txt": "ed182087be5b26734aa6d4789743de3a97417950e8c1e3ff2e3d19c6462720d3",
+    "dist/vendor/matter.min.js": "72d30be0f579eb02ce1e0b6f9d359a4f392e6837e5a26ba8be5dbee7f88e24ae"
+  },
+  "reason": "Current four functional checks retained in tools and passed. Removed initial-version media generation, obsolete rendered mockup tests, redundant tests, old QA media/reference snapshots and dependencies only used by removed scripts."
+}
