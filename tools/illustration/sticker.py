@@ -4,6 +4,11 @@ import random
 def make_sticker(src, n):
     src=src.convert('RGBA')
     rgb=Image.new('RGB',src.size,'white');rgb.paste(src,mask=src.getchannel('A'))
+    # Illustration 02 has enclosed transparent gaps with arbitrary hidden RGB.
+    # Use the white-composited artwork before replacing alpha, so those RGB
+    # values cannot become opaque black patches or blocky compression artifacts.
+    if n == 2:
+        src=rgb.convert('RGBA')
     # Remove only near-white pixels connected to the outer canvas.
     pixels=rgb.load(); mask=Image.new('L',rgb.size); mp=mask.load()
     for y in range(rgb.height):
