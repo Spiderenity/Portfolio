@@ -76,6 +76,7 @@ works.forEach((item,i)=>{
 for(let i=1;i<=6;i++){
   const num=String(i).padStart(2,'0');const stamp=[6,8].includes(i);const item={title:`Illustration ${num}`,image:`/assets/${stamp?'stamp-white':'sticker'}-${num}.webp`};
   if(i===4){item.image='/assets/sticker-04.webp';item.description='캐릭터 출처: Darkest Dungeon';}
+  if(i===5){item.description='커미션 작업 · 캐릭터: 신청자 OC';}
   const button=document.createElement('button');button.className='illustration-card';button.setAttribute('aria-label',`${item.title} 크게 보기`);const img=new Image();img.src=item.image;img.alt=item.title;img.loading='lazy';const label=document.createElement('span');label.textContent=`VIEW ${num} ↗`;button.append(img,label);button.addEventListener('click',()=>openWork(item,button));document.querySelector('#illustration-grid').append(button);
   button.classList.add(stamp?'is-stamp':'is-sticker');button.style.setProperty('--tilt',[-6,5,-4,4,7,-5,-7,5][i-1]+'deg');window.attachPeel(button,img);
 }

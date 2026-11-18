@@ -6,7 +6,7 @@ from sticker import make_sticker
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCES = {1: '1 (1).jpg', 2: '1 (1).png', 3: '1 (2).png',
-           4: '1 (8).png', 5: '1 (4).png', 6: '1 (5).png'}
+           4: '1 (8).png', 5: '1 (9).png', 6: '1 (5).png'}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -33,14 +33,8 @@ def main():
         image.putalpha(template)
         name = 'stamp-white-06.webp'
     else:
-        if args.number != 4:
-            # Historical inputs were first encoded by prepare_media.py.
-            import io
-            image.thumbnail((1800, 1800))
-            encoded = io.BytesIO()
-            image.save(encoded, format='WEBP', quality=88)
-            encoded.seek(0)
-            image = Image.open(encoded).convert('RGBA')
+        # No lossy pre-encode: it damaged the hidden RGB under transparent pixels.
+        image.thumbnail((1800, 1800))
         image = make_sticker(image, args.number)
         name = f'sticker-{args.number:02}.webp'
     destination = ROOT/'dist/assets' if args.publish_assets else args.output_dir
