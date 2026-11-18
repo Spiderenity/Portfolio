@@ -16,8 +16,8 @@
   Backwards와 World Edge Sonata는 목록에서 뺐다(사용자: 일단 제외). `backwards-study*`, `world-edge-sonata*` 파일은 assets에 남겨 두었고 페이지에서 참조하지 않는다.
   2026-11-18 사용자 요청으로 커밋 2a63fec을 main에 푸시해 배포했다(2026-11-14 정리분 포함). 배포 후 실제 주소에서 새 app.js와 릴 파일 응답을 확인했다. `node tools/check-new-works.cjs` 통과(새 순서 기준으로 갱신). 브라우저 화면 확인은 하지 않았다.
 - Motion 카드 6개와 컷인 컬렉션 5개. 컬렉션의 상세 영상과 썸네일은 각 작품별로 유지한다.
-- Illustration 6개: 스티커 4개, 흰 우표 2개.
-  2026-11-18 네 번째 그림을 원본 `../포트폴리오/1 (8).png`로 교체. `stamp-darkest-dungeon-04.svg`에 원본 PNG를 그대로 포함하고 45px 흰 여백과 기존 방식의 우표 가장자리를 벡터로 적용했다. 재생성: `node tools/make-illustration-04.cjs`. 확대 보기 설명은 `캐릭터 출처: Darkest Dungeon`이며 영상 설명과 같은 영역·스타일을 사용한다. 기존 `stamp-white-04.webp`는 보존했다.
+- Illustration 6개: 스티커 5개, 흰 우표 1개.
+  2026-11-18 네 번째 그림을 원본 `../포트폴리오/1 (8).png`로 교체. 기존 스티커 제작 코드(`a060876:refine_assets.py`)의 외곽 연결 흰 배경 제거·28px 여백·31px 최대 필터·미세 불규칙 크림색 테두리·내부 구멍 채움을 동일하게 적용했다. 웹용: `sticker-04.webp`, 재생성: `python tools/make-illustration-04.py`(Pillow 필요). 확대 보기 설명: `캐릭터 출처: Darkest Dungeon`. 원본과 기존 우표 파일은 보존했다.
 - 기본 테마만 남겼다. `?theme=legacy`로 열던 이전 테마 분기는 제거했다.
 - `style.css`는 현재 테마도 사용하는 공통 스타일이므로 삭제하지 않는다.
 
