@@ -1,7 +1,7 @@
 const cutins = [
   {title:'도쿄멸망 1999',slug:'tokyo-1999',dimensions:[1280,960]},
   {title:'교차검증수사대',slug:'crosscheck',dimensions:[1280,720],software:'HTML Canvas · JavaScript'},
-  {title:'PARANOIA',slug:'paranoia',dimensions:[1080,1080]},
+  {title:'VOID Cut-in',slug:'void-cutin',dimensions:[960,540],software:'JavaScript · After Effects'},
   {title:'Lemon',slug:'critical',dimensions:[1276,962]},
   {title:'Mint',slug:'mint',dimensions:[724,542],software:'Blender · JavaScript'}
 ].map(item=>({software:'After Effects',...item}));

@@ -39,7 +39,23 @@ def mint(thumb_at=5.0):
         run('-framerate', fps, '-i', tmp / 'f%03d.png', *X264, A / 'mint.mp4')
 
 
+def void_cutin(thumb_at=3.3):
+    # ../보이드 컷인 의 투명 APNG(480x270, 18fps)를 어두운 바탕에 올려 960x540으로 키운다
+    im = Image.open(WORK / '보이드 컷인/04_출력/AE-DeepGlow2-6종/VOID-대성공.apng')
+    n = im.n_frames; fps = 18
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        for j in range(n):
+            im.seek(j)
+            bg = Image.new('RGBA', im.size, (11, 15, 20, 255)); bg.alpha_composite(im.convert('RGBA'))
+            bg = bg.convert('RGB').resize((960, 540), Image.Resampling.LANCZOS)
+            bg.save(tmp / f'f{j:03d}.png', compress_level=1)
+            if j == round(thumb_at * fps):
+                bg.save(A / 'void-cutin.jpg', quality=90)
+        run('-framerate', fps, '-i', tmp / 'f%03d.png', *X264, A / 'void-cutin.mp4')
+
+
 if __name__ == '__main__':
-    crosscheck(); mint()
-    for f in ('crosscheck.mp4', 'crosscheck.jpg', 'mint.mp4', 'mint.jpg'):
+    crosscheck(); mint(); void_cutin()
+    for f in ('crosscheck.mp4', 'crosscheck.jpg', 'mint.mp4', 'mint.jpg', 'void-cutin.mp4', 'void-cutin.jpg'):
         print(f, (A / f).stat().st_size)
