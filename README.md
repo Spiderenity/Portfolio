@@ -21,9 +21,8 @@
   릴 썸네일·포스터·하이라이트(Beetlejuice 구간)는 내용이 같아 그대로 두었다. `../포트폴리오/보이드.mp4`와 `REEL_1.mp4`는 이전 판 그대로다(릴 AEP가 보이드.mp4를 푸티지로 쓴다).
   사용자 요청으로 main에 푸시해 배포했다. `node tools/check-new-works.cjs`, `node tools/test-range.mjs` 통과. 파일 이름이 같아 브라우저 캐시에는 이전 영상이 남아 있을 수 있다.
 - Motion 카드 6개와 컷인 컬렉션 5개. 컬렉션의 상세 영상과 썸네일은 각 작품별로 유지한다.
-  2026-11-23 컷인 컬렉션에서 찰나와 DGU를 뺐다(사용자: 진짜 컷인이 아님). 이어서 PARANOIA도 보이드 컷인 대성공으로 바꿨다. 순서: 도쿄멸망 1999, 교차검증수사대, VOID Cut-in, Lemon, Mint.
+  2026-11-23 컷인 컬렉션에서 찰나와 DGU를 뺐다(사용자: 진짜 컷인이 아님). 순서: 도쿄멸망 1999, 교차검증수사대, PARANOIA, Lemon, Mint.
   새 항목은 둘 다 대성공: `crosscheck`(원본 `../교차검증수사대/04_출력/대성공-목업.mp4`, 1280x720 30fps), `mint`(원본 `../민트 컷인/04_출력/WebP-6종-6초/민트-페어-대성공.webp`, 투명이라 흰 바탕에 올림, 724x542 18fps).
-  `void-cutin`(원본 `../보이드 컷인/04_출력/AE-DeepGlow2-6종/VOID-대성공.apng`, 투명 480x270을 어두운 바탕에 올려 960x540 18fps로 키움, 표기 `JavaScript · After Effects`). `paranoia.*` 파일도 assets에 남겼다.
   만드는 코드: `python tools/make-cutin-media.py`. 프로그램 표기는 교차검증수사대 `HTML Canvas · JavaScript`, Mint `Blender · JavaScript`, 나머지는 After Effects.
   `chalna.*`, `dgu.*` 파일은 assets에 남겨 두었고 페이지에서 참조하지 않는다. 로컬 미리 보기에서 두 항목의 썸네일·영상 재생을 확인했고 `node tools/check-new-works.cjs`, `node tools/test-range.mjs` 통과. 사용자 요청으로 main에 푸시해 배포했다.
 - Illustration 6개: 스티커 5개, 흰 우표 1개.
