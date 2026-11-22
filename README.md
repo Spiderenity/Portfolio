@@ -21,6 +21,10 @@
   릴 썸네일·포스터·하이라이트(Beetlejuice 구간)는 내용이 같아 그대로 두었다. `../포트폴리오/보이드.mp4`와 `REEL_1.mp4`는 이전 판 그대로다(릴 AEP가 보이드.mp4를 푸티지로 쓴다).
   사용자 요청으로 main에 푸시해 배포했다. `node tools/check-new-works.cjs`, `node tools/test-range.mjs` 통과. 파일 이름이 같아 브라우저 캐시에는 이전 영상이 남아 있을 수 있다.
 - Motion 카드 6개와 컷인 컬렉션 5개. 컬렉션의 상세 영상과 썸네일은 각 작품별로 유지한다.
+  2026-11-23 컷인 컬렉션에서 찰나와 DGU를 뺐다(사용자: 진짜 컷인이 아님). 순서: 도쿄멸망 1999, 교차검증수사대, PARANOIA, Lemon, Mint.
+  새 항목은 둘 다 대성공: `crosscheck`(원본 `../교차검증수사대/04_출력/대성공-목업.mp4`, 1280x720 30fps), `mint`(원본 `../민트 컷인/04_출력/WebP-6종-6초/민트-페어-대성공.webp`, 투명이라 흰 바탕에 올림, 724x542 18fps).
+  만드는 코드: `python tools/make-cutin-media.py`. 프로그램 표기는 교차검증수사대 `HTML Canvas · JavaScript`, Mint `Blender · JavaScript`, 나머지는 After Effects.
+  `chalna.*`, `dgu.*` 파일은 assets에 남겨 두었고 페이지에서 참조하지 않는다. 로컬 미리 보기에서 두 항목의 썸네일·영상 재생을 확인했고 `node tools/check-new-works.cjs`, `node tools/test-range.mjs` 통과. 사용자 요청으로 main에 푸시해 배포했다.
 - Illustration 6개: 스티커 5개, 흰 우표 1개.
   2026-11-18 네 번째 그림을 원본 `../포트폴리오/1 (8).png`로 교체. 기존 스티커 제작 코드(`a060876:refine_assets.py`)의 외곽 연결 흰 배경 제거·28px 여백·31px 최대 필터·미세 불규칙 크림색 테두리·내부 구멍 채움을 동일하게 적용했다. 웹용: `sticker-04.webp`, 재생성: `python tools/make-illustration-04.py`(Pillow 필요). 확대 보기 설명: `캐릭터 출처: Darkest Dungeon`. 원본과 기존 우표 파일은 보존했다.
   2026-11-18 다섯 번째 그림을 원본 `../포트폴리오/1 (9).png`로 교체(확대 보기 설명: `커미션 작업 · 캐릭터: 신청자 OC`)하고, 스티커 1~5번을 한 가지 종이색 방식으로 다시 만들었다. 상세와 재생성 방법은 `tools/illustration/README.md`의 마지막 항목. 4번 재생성은 `python tools/illustration/rebuild.py 4 --publish-assets`를 쓴다(`make-illustration-04.py`는 이전 방식). 사용자 요청으로 커밋 601422a를 main에 푸시해 배포했고, 실제 주소의 스티커 1~5번과 app.js가 로컬과 같은 것을 확인했다. 브라우저 화면 확인은 하지 않았다.

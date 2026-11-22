@@ -1,10 +1,10 @@
 const cutins = [
   {title:'도쿄멸망 1999',slug:'tokyo-1999',dimensions:[1280,960]},
-  {title:'찰나',slug:'chalna',dimensions:[764,1080]},
+  {title:'교차검증수사대',slug:'crosscheck',dimensions:[1280,720],software:'HTML Canvas · JavaScript'},
   {title:'PARANOIA',slug:'paranoia',dimensions:[1080,1080]},
   {title:'Lemon',slug:'critical',dimensions:[1276,962]},
-  {title:'DGU',slug:'dgu',dimensions:[1280,720]}
-].map(item=>({...item,software:'After Effects'}));
+  {title:'Mint',slug:'mint',dimensions:[724,542],software:'Blender · JavaScript'}
+].map(item=>({software:'After Effects',...item}));
 const isHSY=/^\/HSY(?:\.html)?\/?$/i.test(location.pathname);
 const works = [
   {title:'2026 REEL',slug:isHSY?'reel-hsy':'reel',thumb:isHSY?'reel-hsy-thumb':'reel-thumb',software:'2D Animation · Motion Graphics',dimensions:[1280,720]},
